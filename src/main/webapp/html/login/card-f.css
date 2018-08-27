@@ -1,0 +1,107 @@
+
+#card-wrap{
+    margin: 0 auto;
+    width: 1200px;
+    margin-left: : 40px;
+    margin-top: 80px;
+    background-color: #FFFFFFFF; 
+    overflow:hidden;
+    height:auto;
+    padding-bottom: 20px;
+}
+#card-f h3{
+    margin: 40px;
+    margin-left: 30px;
+    margin-bottom: 0px;
+    font-family: 'Anton', sans-serif;
+    font-size: 80px;
+    color: rgba(0, 0, 0, 0.73);
+ }
+#form-total{
+    width: 1200px;
+    margin-left: 20px;
+    display: inline;
+}
+.form-group{
+    margin: 30px;
+    margin-top: 0px;
+}
+.form-control-plaintext{
+    width: 400px;
+    height: 50px;
+    border: 0px;
+    margin: 10px;
+    text-align: bottom;
+}
+input[type=text] {
+    border-bottom: 3px solid #9BF;
+    width: 300px;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: white;
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    outline: none;
+}
+input[type=text]:focus {
+    width: 60%;
+}
+input[type=email] {
+    border-bottom: 3px solid #9BF;
+    width: 300px;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: white;
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    outline: none;
+}
+input[type=email]:focus {
+    width: 60%;
+}
+input[type=password] {
+        border-bottom: 3px solid #9BF;
+    width: 300px;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: white;
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    outline: none;
+}
+input[type=password]:focus {
+    width: 60%;
+}
+label[for=name-info]{
+    font-size: 12px;
+    color: #707070FF;
+}
+label[for=email-info]{
+    font-size: 12px;
+    color: #707070FF;
+}
+label[for=pwd-info]{
+    font-size: 12px;
+    color: #707070FF;
+}
+#card-f button{
+    border: 0px;
+    border-bottom: 3px solid #FF7F7FFF;
+    background-color: #FFFFFF00;
+    width: 100px;
+    font-family: 'Gothic A1', sans-serif;
+    font-weight: bold;
+    margin-right: 40px;
+    float: right;
+    font-size: 20px;
+    margin-top: 0px;
+}

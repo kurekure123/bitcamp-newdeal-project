@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    
+}
+a {
+    text-decoration: none;
+}
+* {
+list-style: none;
+}
+body {
+    font-size: auto;
+    background: linear-gradient(55deg, #FFF5F4 0%, ##FFF3FFFF 51%, #FFFFFFFF 85%); 
+}
+#log-div{
+    margin: 0 auto;
+    width: 1200px;
+    height: auto;
+    overflow: hidden;
+    margin-left: : 40px;
+    margin-top: 200px;
+    background-color: #FFFFFFFF;
+
+}
+#login h3{
+    margin: 40px;
+    margin-left: 30px;
+    margin-bottom: 0px;
+    font-family: 'Anton', sans-serif;
+    font-size: 80px;
+    color: rgba(0, 0, 0, 0.73);
+ }
+#form-ttal{
+    width: 1200px;
+    margin-left: 20px;
+    display: inline;
+}
+.form-group{
+    margin: 30px;
+    margin-top: 40px;
+}
+.form-control-plaintext{
+    width: 400px;
+    height: 50px;
+    border: 0px;
+    margin: 10px;
+    text-align: bottom;
+}
+input[id=log-id] {
+    border-bottom: 3px solid #0194ff;
+    width: 300px;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: white;
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    outline: none;
+    margin-bottom: 20px;
+}
+input[id=log-id]:focus {
+    width: 60%;
+}
+input[id=log-pwd] {
+        border-bottom: 3px solid #0194ff;
+    width: 300px;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: white;
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    outline: none;
+}
+input[id=log-pwd]:focus {
+    width: 60%;
+}
+
+#login button{
+    border: 0px;
+    border-bottom: 3px solid #FF7F7FFF;
+    background-color: #FFFFFF00;
+    width: 200px;
+    font-family: 'Gothic A1', sans-serif;
+    font-weight: bold;
+    margin-right: 40px;
+    float: right;
+    font-size: 20px;
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
