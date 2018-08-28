@@ -16,7 +16,7 @@ body {
 }
 #log-div{
     margin: 0 auto;
-    width: 1200px;
+    width: 80%;
     height: auto;
     overflow: hidden;
     margin-left: : 40px;
@@ -33,7 +33,7 @@ body {
     color: rgba(0, 0, 0, 0.73);
  }
 #form-ttal{
-    width: 1200px;
+    width: 100%;
     margin-left: 20px;
     display: inline;
 }
