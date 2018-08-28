@@ -67,7 +67,7 @@ body {
 }
 
 #footer p{
-    width: 1150px;
+    width: 80%;
     color: #515151FF;
     margin: 0 auto;
 }
@@ -82,4 +82,8 @@ body {
     overflow: auto;
     background-color: rgb(0,0,0); 
     background-color: rgba(0,0,0,0.4);
+}
+.main-wrapper{
+	width : 80%;
+	margin : 0 auto;
 }
