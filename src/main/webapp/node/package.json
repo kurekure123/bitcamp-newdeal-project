@@ -1,5 +1,5 @@
 {
-  "name": "bitcamp-newdeal-project",
+  "name": "bitcamp-nodejs",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,7 +11,12 @@
     "mysql": "^2.16.0",
     "nodemailer": "^4.6.8"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "blueimp-file-upload": "^9.22.0",
+    "bootstrap": "^4.1.2",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.3"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
