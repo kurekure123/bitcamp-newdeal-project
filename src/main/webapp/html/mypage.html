@@ -225,21 +225,6 @@ ul ul a {
 	padding-bottom: 20%;
 }
 
-<<<<<<< HEAD
- .card-front3{
-    height: 189px;
-    width: 340px;
-    background-image: url(../resources/img/card.jpg); 
-    background-size: 100%;
- }
-=======
-.col-md-4 {
-	padding: 0;
-	min-width: 340px;
-	min-height: 189px;
-}
->>>>>>> branch 'master' of https://github.com/kurekure123/bitcamp-newdeal-project.git
-
 #cardfront01 {
     background-image: url('image/card002-back.png');
     background-repeat: none;
@@ -391,33 +376,19 @@ ul ul a {
                     text: 'Something went wrong!',
                     footer: '<a href>Why do I have this issue?</a>'
                   }) */
-<<<<<<< HEAD
         		location.href = './login/main.html'
         		
         	}
         	
-=======
-                location.href = './login/login.html'
-                
-            }
-            
->>>>>>> branch 'master' of https://github.com/kurekure123/bitcamp-newdeal-project.git
               $('#nav-title').html(`${result.lname}님 환영합니다 :)`);
               console.log($('#nav-title').html());    
         });   
         
         $('#logout').on('click',() => {
-<<<<<<< HEAD
         $.post(`${serverApiAddr}/json/member/logout`,function(result) {
         	   if(result === 'success'){
         		   location.href = './login/main.html'
         	   }
-=======
-        $.post(`${serverApiAddr}/json/login/logout`,function(result) {
-               if(result === 'success'){
-                   location.href = './login/main.html'
-               }
->>>>>>> branch 'master' of https://github.com/kurekure123/bitcamp-newdeal-project.git
              }, 'json')
         });
         
