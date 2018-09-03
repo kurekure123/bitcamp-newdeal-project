@@ -16,5 +16,6 @@
 **/package.json
 **/package-lock.json
 
+!config.js
 !build.gradle
 
