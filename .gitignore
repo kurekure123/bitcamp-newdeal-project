@@ -13,5 +13,9 @@
 *.DS_Store
 **/node_modules
 **/security.properties
+**/package.json
+**/package-lock.json
 
+!config.js
 !build.gradle
+
