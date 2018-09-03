@@ -5,6 +5,8 @@
 **/.gradle/
 **/.settings/
 **/bin
+**/.json/
+**/node_modules
 **/build
 **/temp/
 **/.vscode

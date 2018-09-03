@@ -9,7 +9,9 @@
     <!--  
     <request-character-encoding>UTF-8</request-character-encoding>
     -->
-    
+    <session-config>
+        <session-timeout>50</session-timeout>
+    </session-config>
     <filter>
         <filter-name>CharacterEncodingFilter</filter-name>
         <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
