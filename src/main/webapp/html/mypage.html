@@ -15,10 +15,25 @@
 	rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Do+Hyeon"
 	rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Mukta"
+	rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Gaegu"
+	rel="stylesheet">
 </head>
 <style>
 .dropdown-size {
 	text-align: right;
+}
+
+.dropdown-menu {
+	border: 0px;
+	font-family: 'Gaegu', cursive;
+	font-size: 18px;
+	 background-color: #dae0e5;
+}
+
+.dropdown-menu div:hover {
+	background-color: rgba(135, 153, 250, 0.78)
 }
 
 .bizcard-info-size {
@@ -29,13 +44,14 @@
 .form-group input {
 	border: 0px;
 	border-radius: 0px;
-	border-bottom: 2px solid;
+	margin-top: 5px; border-bottom : 2px solid;
 	background-color: rgba(0, 0, 0, 0);
 	outline: none;
+	border-bottom: 2px solid;
 }
 
 .form-group label {
-	font-family: 'Do Hyeon', sans-serif;
+	font-family: 'Gaegu', cursive;
 	font-size: 20px;
 }
 
@@ -46,16 +62,35 @@
 }
 
 .dropdown-toggle {
-	font-family: 'Do Hyeon', sans-serif;
-	font-size: 20px;
+	font-family: 'Gaegu', cursive;
+	font-size: 25px;
 }
 
 footer {
-	background: black;
+	background-color: rgba(206, 206, 206, 0.74);
+	margin: 0px auto;
 }
 
 footer>div.container {
 	height: 200px;
+}
+
+.d-flex {
+	margin-top: 30px;
+}
+
+footer #project_ex, #pro_team {
+	margin: 0px auto;
+	width: 50%;
+	text-align: center;
+	padding-top: 20px;
+	font-size: 14px;
+}
+
+footer a {
+	padding-right: 15px;
+	font-weight: bold;
+	font-family: 'Acme', sans-serif;
 }
 
 .dropdown {
@@ -176,6 +211,17 @@ ul ul a {
 	height: 100%;
 }
 
+.navbar {
+	height: 8.4%;
+	background-color: rgba(206, 206, 206, 0.74);
+	font-size: 35px;
+	font-family: 'Do Hyeon', sans-serif;
+}
+
+.navbar button {
+	font-family: 'Mukta', sans-serif;
+}
+
 .nav-container {
 	width: 100%;
 }
@@ -225,35 +271,42 @@ ul ul a {
 	padding-bottom: 20%;
 }
 
+.col-md-4 {
+	padding: 0;
+	min-width: 340px;
+	min-height: 189px;
+}
+
 #cardfront01 {
-    background-image: url('image/card002-back.png');
-    background-repeat: none;
-    background-size: contain;
-    min-width: 340px;
-    max-width: 340px;
-    min-height: 189px;
-    max-height: 189px;
+	background-image: url('../resources/img/card.jpg');
+	background-repeat: none;
+	background-size: contain;
+	min-width: 340px;
+	max-width: 340px;
+	min-height: 189px;
+	max-height: 189px;
 }
 
 #cardback01 {
-    background-image: url('image/card002-back.png');
-    background-repeat: none;
-    background-size: contain;
-    min-width: 340px;
-    max-width: 340px;
-    min-height: 189px;
-    max-height: 189px;
+	background-image: url('../resources/img/card.jpg');
+	background-repeat: none;
+	background-size: contain;
+	min-width: 340px;
+	max-width: 340px;
+	min-height: 189px;
+	max-height: 189px;
 }
+
 #cardfront01, #card-back01 {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    backface-visibility: hidden;
-    background-size: contain;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	backface-visibility: hidden;
+	background-size: contain;
 }
 
 #cardfront02 {
-	background-image: url('image/card.jpg');
+	background-image: url('../resources/img/card03.jpg');
 	background-repeat: none;
 	background-size: contain;
 	min-width: 340px;
@@ -263,7 +316,7 @@ ul ul a {
 }
 
 #cardback02 {
-	background-image: url('image/card.jpg');
+	background-image: url('../resources/img/card03-back.jpg');
 	background-repeat: none;
 	background-size: contain;
 	min-width: 340px;
@@ -281,33 +334,32 @@ ul ul a {
 }
 
 #cardfront03 {
-    background-image: url('image/unnamed.jpg');
-    background-repeat: none;
-    background-size: contain;
-    min-width: 340px;
-    max-width: 340px;
-    min-height: 189px;
-    max-height: 189px;
+	background-image: url('../resources/img/card02.png');
+	background-repeat: none;
+	background-size: contain;
+	min-width: 340px;
+	max-width: 340px;
+	min-height: 189px;
+	max-height: 189px;
 }
 
 #cardback03 {
-    background-image: url('image/unnamed-1.jpg');
-    background-repeat: none;
-    background-size: contain;
-    min-width: 340px;
-    max-width: 340px;
-    min-height: 189px;
-    max-height: 189px;
+	background-image: url('../resources/img/card02-back.png');
+	background-repeat: none;
+	background-size: contain;
+	min-width: 340px;
+	max-width: 340px;
+	min-height: 189px;
+	max-height: 189px;
 }
 
 #cardfront03, #card-back03 {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    backface-visibility: hidden;
-    background-size: contain;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	backface-visibility: hidden;
+	background-size: contain;
 }
-
 </style>
 <body>
 	<header></header>
@@ -335,7 +387,8 @@ ul ul a {
 						<span class="navbar-toggler-icon"></span>
 					</button>
 					<a id="nav-title" href="#" class="navbar-brand"> </a>
-					<button id="logout" type="button" class="btn btn-secondary btn-sm">로그아웃</button>
+					<button id="logout" type="button" class="btn btn-outline-warning">LOG
+						OUT!</button>
 				</div>
 			</nav>
 			<div id="test2" class=""></div>
