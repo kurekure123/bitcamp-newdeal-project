@@ -26,7 +26,7 @@
 				<div class="form-group">
 					<label for="email" class="col-sm-4 col-form-label">ID</label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control-plaintext" id="log-id"
+						<input type="text" class="form-control-plaintext" id="log-email"
 							placeholder="ex)bizcard@google.com">
 					</div>
 				</div>
@@ -40,12 +40,14 @@
 			</form>
 			<div>
 				<button id="cancel" data-dismiss="modal">취소</button>
-				<button id="logon">로그인 하기</button>
+				<button id="loginBtn" class="">로그인 하기</button>
 			</div>
 		</div>
 	</section>
 	<script
     src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script
+        src="../../node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
 <script
     src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 	
@@ -54,6 +56,40 @@
 
             document.getElementById("testDiv").style.borderBottom = "1px solid #000000";
         }
+        
+        var serverApiAddr = "http://localhost:8080/bitcamp-newdeal-project";
+        
+        $('#loginBtn').on('click', () => {
+            $.post(`${serverApiAddr}/json/login/signIn`, {
+                'email':$('#log-email').val(),
+                'password':$('#log-pwd').val()
+            }, (result) => {
+                if (result.status === 'success'){
+                    location.href = '../mypage.html'
+                }else {
+                    swal({
+                        type: 'error',
+                        title: '로그인 실패!',
+                        text: 'Something went wrong!',
+                        footer: '<a href>Why do I have this issue?</a>'
+                      })
+                }
+            }, 'json')
+            .fail(() => {
+                swal({
+                    type: 'error',
+                    title: '로그인 중에 오류 발생!',
+                    text: 'Something went wrong!',
+                    footer: '로그인해주세요'
+                  })
+            });
+        });
+        
+      
+        
+       // $('#log-div').append('<div>Test2</div>');
+        //$('#log-div').html('<div>Test2</div>');
+        //$('<div>Test2</div>').appendTo($('#log-div'));
     </script>
     
 </body>

@@ -38,15 +38,7 @@ footer>div.container {
 	height: 200px;
 }
 
-/*  가로 min-width: 340px; min-height:189px*/
-/* .card {
-	float: left;
-	width : 340px;
-	height : 189px;
-	margin-bottom: 2rem;
-	padding : 0px;
-	border: 1px solid gray;
-} */
+
 
 .dropdown {
 	text-align: right;
@@ -191,6 +183,32 @@ ul ul a {
     min-height: 189px;
     max-height : 189px;   
 }
+
+/* .card-flipper{
+    width: 100%;
+    height: 100%;
+} */
+ .card-front1{
+    height: 189px;
+    width: 340px;
+    background-image: url(../resources/img/card03.jpg);
+    background-size: 100%;
+ }
+
+ .card-front2{
+    height: 189px;
+    width: 340px;
+    background-image: url(../resources/img/card02.png); 
+    background-size: 100%;
+ }
+
+ .card-front3{
+    height: 189px;
+    width: 340px;
+    background-image: url(../resources/img/card02-back.png); 
+    background-size: 100%;
+ }
+
 .card-settings{
     height: 100%;
 }
@@ -200,9 +218,13 @@ ul ul a {
     padding-bottom : 20%;
 }
 .col-md-4{
+padding: 0;
 min-width:340px;
 min-height:189px;
 }
+
+
+
 </style>
 </head>
 <body>
@@ -231,8 +253,8 @@ min-height:189px;
 						class="navbar-toggler d-lg-none">
 						<span class="navbar-toggler-icon"></span>
 					</button>
-					<a id="nav-title" href="#" class="navbar-brand">name 님 환영합니다 :)</a>
-				</div>
+					<a id="nav-title" href="#" class="navbar-brand"> </a> <button id="logout" type="button" class="btn btn-secondary btn-sm">로그아웃</button>
+				</div> 
 			</nav>
 			<div id="test2" class=""></div>
 		</div>
@@ -252,14 +274,44 @@ min-height:189px;
 
 	<script>
         $(document).ready(function() {
-
             $('#sidebarCollapse').on('click', function() {
                 $('#sidebar').toggleClass('active');
-
             });
             $('div#test2').load('form.html');
             $('footer').load('footer.html');
         });
+        
+        var serverApiAddr = "http://localhost:8080/bitcamp-newdeal-project";
+
+        $.post(`${serverApiAddr}/json/html/mypage`, function (result) {
+        	
+        	if (result.status === 'login-fail') {
+        		alert(result.message);
+        		/* swal({
+                    type: 'error',
+                    title: '오류 발생!',
+                    text: 'Something went wrong!',
+                    footer: '<a href>Why do I have this issue?</a>'
+                  }) */
+        		location.href = './login/login.html'
+        		
+        	}
+        	
+              $('#nav-title').html(`${result.lname}님 환영합니다 :)`);
+              console.log($('#nav-title').html());    
+        });   
+        
+        $('#logout').on('click',() => {
+        $.post(`${serverApiAddr}/json/login/logout`,function(result) {
+        	   if(result === 'success'){
+        		   location.href = './login/main.html'
+        	   }
+             }, 'json')
+        });
+        
     </script>
+    
+    
+    
 </body>
 </html>

@@ -25,7 +25,7 @@
 				<div class="form-group">
 					<label for="email" class="col-sm-4 col-form-label">ID</label>
 					<div class="col-sm-10">
-						<input type="email" class="form-control-plaintext" id="email"
+						<input type="email" class="form-control-plaintext" id="femail"
 							placeholder="ex)bizcard@google.com">
 					</div>
 					<label for="email-info" class="col-sm-4 col-form-label">★반드시
@@ -33,9 +33,9 @@
 				</div>
 
 				<div class="form-group">
-					<label for="jo-name" class="col-sm-4 col-form-label">NAME</label>
+					<label for="fname" class="col-sm-4 col-form-label">NAME</label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control-plaintext" id="jo-name"
+						<input type="text" class="form-control-plaintext" id="fname"
 							placeholder="PRESS YOUR NAME">
 					</div>
 					<label for="name-info" class="col-sm-4 col-form-label">★닉네임
@@ -46,7 +46,7 @@
 					<label for="password" class="col-sm-4 col-form-label">PASSWORD</label>
 					<div class="col-sm-10">
 						<input type="password" class="form-control-plaintext"
-							id="password"
+							id="fpassword"
 							placeholder="&#8226;&#8226;&#8226;&#8226;&#8226;&#8226&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;">
 					</div>
 					<label for="pwd-info" class="col-sm-4 col-form-label">★특수
@@ -54,21 +54,60 @@
 				</div>
 			</form>
 			<div>
-				<button id="okok">가입하기</button>
+				<button id="sign-up">가입하기</button>
 				<button id="cancel" data-dismiss="modal">취소</button>
 			</div>
 		</div>
 	</section>
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	 <script
+		src="../../node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script> 
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 
+    
 	<script>
+	
         function javascript() {
 
             document.getElementById("testDiv").style.borderBottom = "1px solid #000000";
-        }
+        }     
+        
+        var serverApiAddr = "http://localhost:8080/bitcamp-newdeal-project";
+        
+        $('#sign-up').on('click', ()=>{
+        	
+        	
+        	
+            $.post(`${serverApiAddr}/json/member/signUp`,{
+                'email':$('#femail').val(),
+                'name':$('#fname').val(),
+                'password':$('#fpassword').val()
+            }, (result) =>{
+                if (result.status === 'success'){
+                    location.href = 'main.html'
+                }else {
+                    swal({
+                        type: 'error',
+                        title: '회원 가입 실패!',
+                        text: 'Something went wrong!',
+                        footer: '<a href>Why do I have this issue?</a>'
+                      })
+                      console.log(result.message)
+                }
+            }, 'json')
+            .fail(() => {
+                swal({
+                    type: 'error',
+                    title: '회원 가입 중에 오류 발생!',
+                    text: 'Something went wrong!',
+                    footer: '<a href>Why do I have this issue?</a>'
+                  })
+            });
+        });
+        
     </script>
+    
 </body>
 </html>
