@@ -60,7 +60,7 @@
         var serverApiAddr = "http://localhost:8080/bitcamp-newdeal-project";
         
         $('#loginBtn').on('click', () => {
-            $.post(`${serverApiAddr}/json/login/signIn`, {
+            $.post(`${serverApiAddr}/json/member/signIn`, {
                 'email':$('#log-email').val(),
                 'password':$('#log-pwd').val()
             }, (result) => {

@@ -22,14 +22,24 @@
 		<div id="card-wrap">
 			<h3>JOIN US!</h3>
 			<form id="form-total">
+
+				<!-- <div class="form-group">
+					<label for="femail">Email</label> <input
+						type="email" class="form-control" id="femail"
+						aria-describedby="emailHelp" placeholder="Enter email"> <small
+						id="emailHelp" class="form-text text-muted">We'll never
+						share your email with anyone else.</small>
+				</div> -->
+
 				<div class="form-group">
-					<label for="email" class="col-sm-4 col-form-label">ID</label>
 					<div class="col-sm-10">
-						<input type="email" class="form-control-plaintext" id="femail"
-							placeholder="ex)bizcard@google.com">
+						<label for="femail" class="col-sm-4 col-form-label">ID</label> <input
+							type="email" class="form-control-plaintext" id="femail"
+							name="email" placeholder="ex)bizcard@google.com"
+							aria-describedby="email-info"> <small for="email-info"
+							class="form-text text-muted col-sm-4 col-form-label">★반드시
+							완벽한 이메일 형태로 입력 해주세요.</small>
 					</div>
-					<label for="email-info" class="col-sm-4 col-form-label">★반드시
-						완벽한 이메일 형태로 입력 해주세요.</label>
 				</div>
 
 				<div class="form-group">
@@ -52,21 +62,21 @@
 					<label for="pwd-info" class="col-sm-4 col-form-label">★특수
 						문자를 포함한 6-12자로 구성 된 비밀 번호로 설정 바랍니다.</label>
 				</div>
+				<div>
+						<button id="sign-up">가입하기</button>
+					<button id="cancel" data-dismiss="modal">취소</button>
+				</div>
 			</form>
-			<div>
-				<button id="sign-up">가입하기</button>
-				<button id="cancel" data-dismiss="modal">취소</button>
-			</div>
 		</div>
 	</section>
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	 <script
-		src="../../node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script> 
+	<script
+		src="../../node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 
-    
+
 	<script>
 	
         function javascript() {
@@ -77,9 +87,26 @@
         var serverApiAddr = "http://localhost:8080/bitcamp-newdeal-project";
         
         $('#sign-up').on('click', ()=>{
-        	
-        	
-        	
+        	console.log($('#femail').val());
+        	if($('#femail').val().trim().match(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/)==null) {
+				//alert('이메일이 유효하지 않습니다.');
+				swal({
+                        type: 'error',
+                        title: '이메일이 유효하지 않습니다.',
+                        text: 'Something went wrong!',
+                        footer: ''
+                      })
+				return 
+			}
+
+			if($('#fname').val() == '') {
+				alert('이름을 입력해주세요');
+			}
+
+			if($('#fpassword').val() == '') {
+				alert('비밀번호를 입력해주세요')
+			}
+
             $.post(`${serverApiAddr}/json/member/signUp`,{
                 'email':$('#femail').val(),
                 'name':$('#fname').val(),
@@ -108,6 +135,6 @@
         });
         
     </script>
-    
+
 </body>
 </html>

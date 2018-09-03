@@ -12,13 +12,13 @@
     </resultMap>
     
     <insert id="insert" parameterType="member">
-        insert into member(EMAIL,PWD,NAME)
+        insert into MEMBER(EMAIL,PWD,NAME)
         values(#{email}, password(#{password}), #{name})
     </insert>
     
     <select id="login" parameterType="map" resultMap="memberMap">
         select  MNO, EMAIL, NAME
-        from member
+        from MEMBER
         where EMAIL=#{email} AND PWD=password(#{password})
     </select>
   

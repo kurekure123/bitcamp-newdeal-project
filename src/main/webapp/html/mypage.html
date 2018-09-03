@@ -205,7 +205,7 @@ ul ul a {
  .card-front3{
     height: 189px;
     width: 340px;
-    background-image: url(../resources/img/card02-back.png); 
+    background-image: url(../resources/img/card.jpg); 
     background-size: 100%;
  }
 
@@ -294,7 +294,7 @@ min-height:189px;
                     text: 'Something went wrong!',
                     footer: '<a href>Why do I have this issue?</a>'
                   }) */
-        		location.href = './login/login.html'
+        		location.href = './login/main.html'
         		
         	}
         	
@@ -303,7 +303,7 @@ min-height:189px;
         });   
         
         $('#logout').on('click',() => {
-        $.post(`${serverApiAddr}/json/login/logout`,function(result) {
+        $.post(`${serverApiAddr}/json/member/logout`,function(result) {
         	   if(result === 'success'){
         		   location.href = './login/main.html'
         	   }
