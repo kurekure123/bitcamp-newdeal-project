@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Admin</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
@@ -10,6 +11,11 @@
 	rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Nanum+Pen+Script"
 	rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Kosugi+Maru"
+	rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Do+Hyeon"
+	rel="stylesheet">
+</head>
 <style>
 .dropdown-size {
 	text-align: right;
@@ -20,14 +26,28 @@
 	margin-top: 20px;
 }
 
-.btn-light {
-	border: 1px solid #ced4da;
+.form-group input {
+	border: 0px;
+	border-radius: 0px;
+	border-bottom: 2px solid;
+	background-color: rgba(0, 0, 0, 0);
+	outline: none;
+}
+
+.form-group label {
+	font-family: 'Do Hyeon', sans-serif;
+	font-size: 20px;
 }
 
 .index-border {
 	margin-top: 10px;
 	border-right: 1px solid #eee;
 	min-height: 600px;
+}
+
+.dropdown-toggle {
+	font-family: 'Do Hyeon', sans-serif;
+	font-size: 20px;
 }
 
 footer {
@@ -37,8 +57,6 @@ footer {
 footer>div.container {
 	height: 200px;
 }
-
-
 
 .dropdown {
 	text-align: right;
@@ -82,6 +100,14 @@ a[data-toggle="collapse"] {
 
 @import
 	"https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+#prev-btn, #select-card {
+	font-family: 'Kosugi Maru', sans-serif;
+	background-color: rgba(255, 173, 173, 0.53);
+	border: 0px;
+	color: #424242;
+	outline: none;
+}
 
 body {
 	font-family: 'Poppins', sans-serif;
@@ -159,76 +185,137 @@ ul ul a {
 }
 
 .site-wrapper-inner {
-	width : 100%;
+	width: 100%;
 	height: 70%;
 	display: table;
 	margin-bottom: 30px;
 	width: 100%;
 }
-.contents-wrapper{
-    padding: 5%;
+
+.contents-wrapper {
+	padding: 5%;
 }
 
 .cover-container {
 	display: table-cell;
 	vertical-align: middle;
 }
-.btn-group-lg>.btn, .btn-lg{
-    border-radius: 2.3rem;
-}
-.card-container{
-    border : 1px solid red;
-    min-width: 340px;
-    max-width : 340px;
-    min-height: 189px;
-    max-height : 189px;   
+
+.btn-group-lg>.btn, .btn-lg {
+	border-radius: 2.3rem;
 }
 
+.card-container {
+	min-width: 340px;
+	max-width: 340px;
+	min-height: 189px;
+	max-height: 189px;
+}
 /* .card-flipper{
     width: 100%;
     height: 100%;
 } */
- .card-front1{
-    height: 189px;
-    width: 340px;
-    background-image: url(../resources/img/card03.jpg);
-    background-size: 100%;
- }
+.card-settings {
+	height: 100%;
+}
 
- .card-front2{
-    height: 189px;
-    width: 340px;
-    background-image: url(../resources/img/card02.png); 
-    background-size: 100%;
- }
+.cardlist-wrapper {
+	height: 90%;
+	padding-top: 20%;
+	padding-bottom: 20%;
+}
 
- .card-front3{
-    height: 189px;
-    width: 340px;
-    background-image: url(../resources/img/card02-back.png); 
-    background-size: 100%;
- }
+.col-md-4 {
+	padding: 0;
+	min-width: 340px;
+	min-height: 189px;
+}
 
-.card-settings{
+#cardfront01 {
+    background-image: url('image/card002-back.png');
+    background-repeat: none;
+    background-size: contain;
+    min-width: 340px;
+    max-width: 340px;
+    min-height: 189px;
+    max-height: 189px;
+}
+
+#cardback01 {
+    background-image: url('image/card002-back.png');
+    background-repeat: none;
+    background-size: contain;
+    min-width: 340px;
+    max-width: 340px;
+    min-height: 189px;
+    max-height: 189px;
+}
+#cardfront01, #card-back01 {
+    width: 100%;
     height: 100%;
-}
-.cardlist-wrapper{
-    height : 90%;
-    padding-top : 20%;
-    padding-bottom : 20%;
-}
-.col-md-4{
-padding: 0;
-min-width:340px;
-min-height:189px;
+    position: absolute;
+    backface-visibility: hidden;
+    background-size: contain;
 }
 
+#cardfront02 {
+	background-image: url('image/card.jpg');
+	background-repeat: none;
+	background-size: contain;
+	min-width: 340px;
+	max-width: 340px;
+	min-height: 189px;
+	max-height: 189px;
+}
 
+#cardback02 {
+	background-image: url('image/card.jpg');
+	background-repeat: none;
+	background-size: contain;
+	min-width: 340px;
+	max-width: 340px;
+	min-height: 189px;
+	max-height: 189px;
+}
+
+#cardfront02, #card-back02 {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	backface-visibility: hidden;
+	background-size: contain;
+}
+
+#cardfront03 {
+    background-image: url('image/unnamed.jpg');
+    background-repeat: none;
+    background-size: contain;
+    min-width: 340px;
+    max-width: 340px;
+    min-height: 189px;
+    max-height: 189px;
+}
+
+#cardback03 {
+    background-image: url('image/unnamed-1.jpg');
+    background-repeat: none;
+    background-size: contain;
+    min-width: 340px;
+    max-width: 340px;
+    min-height: 189px;
+    max-height: 189px;
+}
+
+#cardfront03, #card-back03 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    background-size: contain;
+}
 
 </style>
-</head>
 <body>
-
 	<header></header>
 	<div class="wrapper">
 		<!-- Sidebar -->
@@ -253,8 +340,9 @@ min-height:189px;
 						class="navbar-toggler d-lg-none">
 						<span class="navbar-toggler-icon"></span>
 					</button>
-					<a id="nav-title" href="#" class="navbar-brand"> </a> <button id="logout" type="button" class="btn btn-secondary btn-sm">로그아웃</button>
-				</div> 
+					<a id="nav-title" href="#" class="navbar-brand"> </a>
+					<button id="logout" type="button" class="btn btn-secondary btn-sm">로그아웃</button>
+				</div>
 			</nav>
 			<div id="test2" class=""></div>
 		</div>
@@ -277,42 +365,42 @@ min-height:189px;
             $('#sidebarCollapse').on('click', function() {
                 $('#sidebar').toggleClass('active');
             });
-            $('div#test2').load('form.html');
-            $('footer').load('footer.html');
+            $('div#test2').load('mypage/form.html');
+            $('footer').load('mypage/footer.html');
         });
         
         
         var serverApiAddr = "http://localhost:8080/bitcamp-newdeal-project";
 
         $.post(`${serverApiAddr}/json/html/mypage`, function (result) {
-        	
-        	if (result.status === 'login-fail') {
-        		alert(result.message);
-        		/* swal({
+            
+            if (result.status === 'login-fail') {
+                alert(result.message);
+                /* swal({
                     type: 'error',
                     title: '오류 발생!',
                     text: 'Something went wrong!',
                     footer: '<a href>Why do I have this issue?</a>'
                   }) */
-        		location.href = './login/login.html'
-        		
-        	}
-        	
+                location.href = './login/login.html'
+                
+            }
+            
               $('#nav-title').html(`${result.lname}님 환영합니다 :)`);
               console.log($('#nav-title').html());    
         });   
         
         $('#logout').on('click',() => {
         $.post(`${serverApiAddr}/json/login/logout`,function(result) {
-        	   if(result === 'success'){
-        		   location.href = './login/main.html'
-        	   }
+               if(result === 'success'){
+                   location.href = './login/main.html'
+               }
              }, 'json')
         });
         
+
     </script>
-    
-    
-    
 </body>
+
+
 </html>
