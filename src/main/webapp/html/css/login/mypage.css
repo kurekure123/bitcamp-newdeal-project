@@ -2,39 +2,83 @@
 	text-align: right;
 }
 
+.dropdown-menu {
+	border: 0px;
+	font-family: 'Gaegu', cursive;
+	font-size: 18px;
+	background-color: #dae0e5;
+}
+
+.dropdown-menu div:hover {
+	background-color: rgba(135, 153, 250, 0.78)
+}
+
 .bizcard-info-size {
 	width: 65%;
 	margin-top: 20px;
+	margin-bottom: 5%;
 }
-.form-group input{
-    border: 0px;
-    border-radius: 0px;
-    border-bottom: 2px solid;
-    background-color: rgba(0, 0, 0, 0);
+
+.form-group input {
+	border: 0px;
+	border-radius: 0px;
+	border-bottom: 2px solid;
+	background-color: rgba(0, 0, 0, 0);
+	border-bottom: 2px solid;
+	margin-top: 20px;
+	height: 50px;
+	font-size: 20px;
+	outline: none;
 }
-.form-group label{
-    font-family: 'Do Hyeon', sans-serif;
-    font-size: 20px;
+
+input[class="form-control"] {
+	outline: none;
 }
+
+.form-group label {
+	font-family: 'Gaegu', cursive;
+	font-size: 20px;
+}
+
 .index-border {
 	margin-top: 10px;
 	border-right: 1px solid #eee;
 	min-height: 600px;
 }
-.dropdown-toggle{
-    font-family: 'Do Hyeon', sans-serif;
-    font-size: 20px;
+
+.dropdown-toggle {
+	font-family: 'Gaegu', cursive;
+	font-size: 25px;
 }
 
 footer {
-	background: black;
+	background-color: rgba(206, 206, 206, 0.74);
+	margin: 0px auto;
 }
 
 footer>div.container {
 	height: 200px;
 }
 
+.d-flex {
+	margin-top: 7.4%;
+	}
 
+
+
+footer #project_ex, #pro_team {
+	margin: 0px auto;
+	width: 50%;
+	text-align: center;
+	padding-top: 20px;
+	font-size: 14px;
+}
+
+footer a {
+	padding-right: 15px;
+	font-weight: bold;
+	font-family: 'Acme', sans-serif;
+}
 
 .dropdown {
 	text-align: right;
@@ -50,6 +94,7 @@ footer>div.container {
 }
 
 #sidebar {
+	font-family: 'Anton', sans-serif;
 	min-width: 250px;
 	max-width: 250px;
 	min-height: 80vh;
@@ -79,15 +124,24 @@ a[data-toggle="collapse"] {
 @import
 	"https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 
-#prev-btn,  #select-card{
-    font-family: 'Kosugi Maru', sans-serif;
-    background-color: rgba(255, 173, 173, 0.53);   
-    border: 0px;
-    color: #424242;
+#select-card, #final-btn, #info-btn {
+	font-family: 'Kosugi Maru', sans-serif;
+	background-color: rgba(255, 106, 134, 0.73);
+	border: 0px;
+	color: #424242;
+	outline: none;
 }
+#prev1, #prev2, #prev3{
+	border:0px;
+	background-color: 	rgba(255, 255, 255, 0);
+} 
 
 
-
+#b-btn {
+	margin-top: 6.5%;
+	float: right;
+	margin-right: 10%;
+}
 
 body {
 	font-family: 'Poppins', sans-serif;
@@ -110,19 +164,23 @@ a, a:hover, a:focus {
 
 #sidebar {
 	/* don't forget to add all the previously mentioned styles here too */
-	background: #7386D5;
-	color: #fff;
+	background-color: rgba(125, 185, 255, 0.73);
+	color: rgb(0, 0, 0);
 	transition: all 0.3s;
 }
 
 #sidebar .sidebar-header {
-	padding: 20px;
-	background: #6d7fcc;
+	padding: 60% 5% 10% 20%;
+	font-size: 40px;
+	border-bottom: 0px ;
+	text-decoration: underline;
 }
-
 #sidebar ul.components {
 	padding: 20px 0;
-	border-bottom: 1px solid #47748b;
+}
+
+#sidebar a {
+	font-size: 1.1em;
 }
 
 #sidebar ul p {
@@ -131,9 +189,11 @@ a, a:hover, a:focus {
 }
 
 #sidebar ul li a {
-	padding: 10px;
-	font-size: 1.1em;
+	padding: 20px;
+	font-size: 1.2em;
 	display: block;
+	font-family: 'Nanum Gothic', sans-serif;
+	font-weight: normal;
 }
 
 #sidebar ul li a:hover {
@@ -143,7 +203,7 @@ a, a:hover, a:focus {
 
 #sidebar ul li.active>a, a[aria-expanded="true"] {
 	color: #fff;
-	background: #6d7fcc;
+	background: rgba(125, 185, 255, 0.73);
 }
 
 ul ul a {
@@ -156,6 +216,17 @@ ul ul a {
 	height: 100%;
 }
 
+.navbar {
+	height: 8.4%;
+	background-color: rgba(206, 206, 206, 0.74);
+	font-size: 35px;
+	font-family: 'Do Hyeon', sans-serif;
+}
+
+.navbar button {
+	font-family: 'Mukta', sans-serif;
+}
+
 .nav-container {
 	width: 100%;
 }
@@ -165,95 +236,137 @@ ul ul a {
 }
 
 .site-wrapper-inner {
-	width : 100%;
+	width: 100%;
 	height: 70%;
 	display: table;
-	margin-bottom: 30px;
+
 	width: 100%;
 }
-.contents-wrapper{
-    padding: 5%;
+
+.contents-wrapper {
+	padding: 5%;
 }
 
 .cover-container {
 	display: table-cell;
 	vertical-align: middle;
+	height: 100%;
+	width: 50%;
 }
-.btn-group-lg>.btn, .btn-lg{
-    border-radius: 2.3rem;
+
+.btn-group-lg>.btn, .btn-lg {
+	border-radius: 2.3rem;
 }
-.card-container{
-    min-width: 340px;
-    max-width : 340px;
-    min-height: 189px;
-    max-height : 189px;   
+
+.card-container {
+	min-width: 340px;
+	max-width: 340px;
+	min-height: 189px;
+	max-height: 189px;
 }
 /* .card-flipper{
     width: 100%;
     height: 100%;
 } */
-
-.card-settings{
-    height: 100%;
+.card-settings {
+	height: 100%;
 }
-.cardlist-wrapper{
-    height : 90%;
-    padding-top : 20%;
-    padding-bottom : 20%;
+cardlist .container{
+	width: 1200px;
+	
 }
-.col-md-4{
-padding: 0;
-min-width:340px;
-min-height:189px;
+.cardlist-wrapper {
+	height: 90%;
+	padding-top: 20%;
+	padding-bottom: 10%;
 }
 
- #cardfront02 {
-        background-image: url(/src/main/webapp/html/image/card002-back.png);
-        background-repeat: none;
-        background-size: contain;
-        min-width: 340px;
-        max-width: 340px;
-        min-height: 189px;
-        max-height: 189px;
-    }
+.col-md-4 {
+	padding: 0;
+	min-width: 340px;
+	min-height: 189px;
+}
 
-    #cardback02 {
-        background-image: url(/src/main/webapp/html/image/card002.png);
-        background-repeat: none;
-        background-size: contain;
-        min-width: 340px;
-        max-width: 340px;
-        min-height: 189px;
-        max-height: 189px;
-    }
+#cardfront01 {
+	background-image: url('../../../resources/img/card.jpg');
+	background-repeat: none;
+	background-size: contain;
+	min-width: 340px;
+	max-width: 340px;
+	min-height: 189px;
+	max-height: 189px;
+}
 
-    #cardfront02,
-    #card-back02 {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        backface-visibility: hidden;
-        background-size: contain;
-    }
+#cardback01 {
+	background-image: url('../../../resources/img/card.jpg');
+	background-repeat: none;
+	background-size: contain;
+	min-width: 340px;
+	max-width: 340px;
+	min-height: 189px;
+	max-height: 189px;
+}
 
-    #cardfront03 {
-        background-image: url(/src/main/webapp/html/image/unnamed.jpg);
-        background-repeat: none;
-        background-size: 100%;
+#cardfront01, #card-back01 {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	backface-visibility: hidden;
+	background-size: contain;
+}
 
-    }
+#cardfront02 {
+	background-image: url('../../../resources/img/card03.jpg');
+	background-repeat: none;
+	background-size: contain;
+	min-width: 340px;
+	max-width: 340px;
+	min-height: 189px;
+	max-height: 189px;
+}
 
-    #cardback03 {
-        background-image: url(/src/main/webapp/html/image/unnamed-1.jpg);
-        background-repeat: none;
-        background-size: 100%;
-    }
+#cardback02 {
+	background-image: url('../../../resources/img/card03-back.jpg');
+	background-repeat: none;
+	background-size: contain;
+	min-width: 340px;
+	max-width: 340px;
+	min-height: 189px;
+	max-height: 189px;
+}
 
-    #cardfront03,
-    #card-back03 {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        backface-visibility: hidden;
-        background-size: contain;
-    }
+#cardfront02, #card-back02 {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	backface-visibility: hidden;
+	background-size: contain;
+}
+
+#cardfront03 {
+	background-image: url('../../../resources/img/card02.png');
+	background-repeat: none;
+	background-size: contain;
+	min-width: 340px;
+	max-width: 340px;
+	min-height: 189px;
+	max-height: 189px;
+}
+
+#cardback03 {
+	background-image: url('../../../resources/img/card02-back.png');
+	background-repeat: none;
+	background-size: contain;
+	min-width: 340px;
+	max-width: 340px;
+	min-height: 189px;
+	max-height: 189px;
+}
+
+#cardfront03, #card-back03 {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	backface-visibility: hidden;
+	background-size: contain;
+}
