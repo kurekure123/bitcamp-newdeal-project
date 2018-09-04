@@ -30,38 +30,43 @@
 			</form>
 		</div>
 		<div class="d-flex" id="b-btn">
-			<button id="select-card" class="btn btn-primary btn-lg next-btn">NEXT
-				></button>
+			<button id="select-card" class="btn btn-primary btn-lg next-btn"></button>
 		</div>
 	</div>
 </div>
 
 
 <script>
- 	function checkdouble(){
- 		var face = false;
- 	}
- 	$('#add-info').click((e)=>{
- 		var click_id = e.target.getAttribute('id');
- 		var text = $(`#${click_id}`).text();
- 		var form_id = text.replace(' ', '');
- 		
- 		console.log(click_id);
- 		if($(`#e${form_id}`).length === 0){
-			if(click_id !== '' && click_id !== undefined){
-				$('#info-form').append(`\
-				<div id="e${form_id}-form" class="form-group"> \
-				  <label for="e${form_id}">${text}</label> \
-				  <input type="text" class="form-control" id="e${form_id}"> \
-				</div>`);
-			}
-		}else {
-			alert(text + '항목을 이미 추가하셨습니다.');
-		}
- 	});
+ $('#next-btn').text(' NEXT >');
 
- 	$('#select-card').click(()=>{
-		$('div#test2').load('make-bizcard/cardlist.html');
- 		//location.href('cardlist.html');
- 	});
+$('#add-info').on('click', (e)=>{
+            var click_id = e.target.getAttribute('id');
+            var text = $(`#${click_id}`).text();
+            var form_id = text.replace(' ', '');
+            
+            console.log(click_id);
+            if($(`#e${form_id}`).length === 0){
+                if(click_id !== '' && click_id !== undefined){
+                    $('#info-form').append(`\
+                    <div id="e${form_id}-form" class="form-group"> \
+                      <label for="e${form_id}">${text}</label> \
+                      <input type="text" class="form-control" id="e${form_id}"> \
+                    </div>`);
+                }
+            }else {
+                alert(text + '항목을 이미 추가하셨습니다.');
+            }
+        });
+		var serverApiAddr = "http://localhost:8080/bitcamp-newdeal-project";
+        $('#next-btn').on('click',()=>{
+        	$.post(`${serverApiAddr}/json/html/card`,{
+				'bEmail':$('#eEmail').val(),
+				'bName':$('#eName').val(),
+				'bPhon':$('#ePhon').val()
+			}, (result) => {
+				console.log(result.uCard);
+			}, 'json')
+        	
+            $('div#test2').load('../make-bizcard/cardlist.html');
+        });
  </script>
