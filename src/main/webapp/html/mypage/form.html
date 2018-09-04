@@ -58,8 +58,16 @@ $('#add-info').on('click', (e)=>{
                 alert(text + '항목을 이미 추가하셨습니다.');
             }
         });
-
+		var serverApiAddr = "http://localhost:8080/bitcamp-newdeal-project";
         $('#next-btn').on('click',()=>{
-            $('div#test2').load('make-bizcard/cardlist.html');
+        	$.post(`${serverApiAddr}/json/html/card`,{
+				'bEmail':$('#eEmail').val(),
+				'bName':$('#eName').val(),
+				'bPhon':$('#ePhon').val()
+			}, (result) => {
+				console.log(result.uCard);
+			}, 'json')
+        	
+            $('div#test2').load('../make-bizcard/cardlist.html');
         });
 </script>

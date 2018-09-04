@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import bitcamp.newdeal.domain.Card;
 import bitcamp.newdeal.domain.Member;
 
 @RestController
@@ -23,6 +24,18 @@ public class SmMypageController {
         
        
         result.put("lname", loginuser.getName());
+        
+        return result;
+    }
+    
+    @PostMapping("card")
+    public Object cards(HttpSession session, Card card) {
+        HashMap<String, Object> result = new HashMap<>();
+        
+        session.setAttribute("sCard", card);
+        Card uCard = (Card)session.getAttribute("sCard");
+        result.put("uCard", uCard);
+        
         
         return result;
     }

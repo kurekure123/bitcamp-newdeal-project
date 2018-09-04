@@ -1,259 +1,357 @@
 .dropdown-size {
-	text-align: right;
+   text-align: right;
+}
+
+.dropdown-menu {
+   border: 0px;
+   font-family: 'Gaegu', cursive;
+   font-size: 18px;
+   background-color: #dae0e5;
+}
+
+.dropdown-menu div:hover {
+   background-color: rgba(135, 153, 250, 0.78)
 }
 
 .bizcard-info-size {
-	width: 65%;
-	margin-top: 20px;
+   width: 65%;
+   margin-top: 20px;
 }
-.form-group input{
-    border: 0px;
-    border-radius: 0px;
-    border-bottom: 2px solid;
-    background-color: rgba(0, 0, 0, 0);
+
+.form-group input {
+   border: 0px;
+   border-radius: 0px;
+   border-bottom: 2px solid;
+   background-color: rgba(0, 0, 0, 0);
+   border-bottom: 2px solid;
+   margin-top: 20px;
+   height: 50px;
+   font-size: 20px;
+   outline: none;
 }
-.form-group label{
-    font-family: 'Do Hyeon', sans-serif;
-    font-size: 20px;
+
+input[class="form-control"] {
+   outline: none;
 }
+
+.form-group label {
+   font-family: 'Gaegu', cursive;
+   font-size: 20px;
+}
+
 .index-border {
-	margin-top: 10px;
-	border-right: 1px solid #eee;
-	min-height: 600px;
+   margin-top: 10px;
+   border-right: 1px solid #eee;
+   min-height: 600px;
 }
-.dropdown-toggle{
-    font-family: 'Do Hyeon', sans-serif;
-    font-size: 20px;
+
+.dropdown-toggle {
+   font-family: 'Gaegu', cursive;
+   font-size: 25px;
 }
 
 footer {
-	background: black;
+   background-color: rgba(206, 206, 206, 0.74);
+   margin: 0px auto;
 }
 
 footer>div.container {
-	height: 200px;
+   height: 200px;
 }
 
+.d-flex {
+   margin-top: 30px;
+}
 
+footer #project_ex, #pro_team {
+   margin: 0px auto;
+   width: 50%;
+   text-align: center;
+   padding-top: 20px;
+   font-size: 14px;
+}
+
+footer a {
+   padding-right: 15px;
+   font-weight: bold;
+   font-family: 'Acme', sans-serif;
+}
 
 .dropdown {
-	text-align: right;
+   text-align: right;
 }
 
 .wrapper {
-	display: flex;
-	align-items: stretch;
+   display: flex;
+   align-items: stretch;
 }
 
 #sidebar.active {
-	margin-left: -250px;
+   margin-left: -250px;
 }
 
 #sidebar {
-	min-width: 250px;
-	max-width: 250px;
-	min-height: 80vh;
+   font-family: 'Anton', sans-serif;
+   min-width: 250px;
+   max-width: 250px;
+   min-height: 80vh;
 }
 
 a[data-toggle="collapse"] {
-	position: relative;
+   position: relative;
 }
 
 .btn  .dropdown-toggle::after {
-	display: block;
-	position: absolute;
-	top: 50%;
-	right: 20px;
-	transform: translateY(-50%);
+   display: block;
+   position: absolute;
+   top: 50%;
+   right: 20px;
+   transform: translateY(-50%);
 }
 
 @media ( max-width : 768px) {
-	#sidebar {
-		margin-left: -250px;
-	}
-	#sidebar.active {
-		margin-left: 0;
-	}
+   #sidebar {
+      margin-left: -250px;
+   }
+   #sidebar.active {
+      margin-left: 0;
+   }
 }
 
 @import
-	"https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+   "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 
-#prev-btn,  #select-card{
-    font-family: 'Kosugi Maru', sans-serif;
-    background-color: rgba(255, 173, 173, 0.53);   
-    border: 0px;
-    color: #424242;
+#select-card, #final-btn, #info-btn {
+   font-family: 'Kosugi Maru', sans-serif;
+   background-color: rgba(255, 173, 173, 0.53);
+   border: 0px;
+   color: #424242;
+   outline: none;
 }
 
-
-
+#b-btn {
+   margin-top: 30px;
+   float: right;
+}
 
 body {
-	font-family: 'Poppins', sans-serif;
-	background: #fafafa;
+   font-family: 'Poppins', sans-serif;
+   background: #fafafa;
 }
 
 p {
-	font-family: 'Poppins', sans-serif;
-	font-size: 1.1em;
-	font-weight: 300;
-	line-height: 1.7em;
-	color: #999;
+   font-family: 'Poppins', sans-serif;
+   font-size: 1.1em;
+   font-weight: 300;
+   line-height: 1.7em;
+   color: #999;
 }
 
 a, a:hover, a:focus {
-	color: inherit;
-	text-decoration: none;
-	transition: all 0.3s;
+   color: inherit;
+   text-decoration: none;
+   transition: all 0.3s;
 }
 
 #sidebar {
-	/* don't forget to add all the previously mentioned styles here too */
-	background: #7386D5;
-	color: #fff;
-	transition: all 0.3s;
+   /* don't forget to add all the previously mentioned styles here too */
+   background-color: rgba(163, 167, 255, 0.89);
+   color: rgb(0, 0, 0);
+   transition: all 0.3s;
 }
 
 #sidebar .sidebar-header {
-	padding: 20px;
-	background: #6d7fcc;
+   padding: 20px 20px 11px 20px;
+   font-size: 30px;
+   border-bottom: 2px solid rgb(134, 134, 134);
 }
 
 #sidebar ul.components {
-	padding: 20px 0;
-	border-bottom: 1px solid #47748b;
+   padding: 20px 0;
+}
+#sidebar a{
+      font-size: 1.1em;
 }
 
 #sidebar ul p {
-	color: #fff;
-	padding: 10px;
+   color: #fff;
+   padding: 10px;
 }
 
 #sidebar ul li a {
-	padding: 10px;
-	font-size: 1.1em;
-	display: block;
+   padding: 10px;
+   font-size: 1.5em;
+   display: block;
 }
 
 #sidebar ul li a:hover {
-	color: #7386D5;
-	background: #fff;
+   color: #7386D5;
+   background: #fff;
 }
 
 #sidebar ul li.active>a, a[aria-expanded="true"] {
-	color: #fff;
-	background: #6d7fcc;
+   color: #fff;
+   background: #6d7fcc;
 }
 
 ul ul a {
-	font-size: 0.9em !important;
-	padding-left: 30px !important;
-	background: #6d7fcc;
+   font-size: 0.9em !important;
+   padding-left: 30px !important;
+   background: #6d7fcc;
 }
 
 #test2 {
-	height: 100%;
+   height: 100%;
+}
+
+.navbar {
+   height: 8.4%;
+   background-color: rgba(206, 206, 206, 0.74);
+   font-size: 35px;
+   font-family: 'Do Hyeon', sans-serif;
+}
+
+.navbar button {
+   font-family: 'Mukta', sans-serif;
 }
 
 .nav-container {
-	width: 100%;
+   width: 100%;
 }
 
 #content {
-	width: 100%;
+   width: 100%;
 }
 
 .site-wrapper-inner {
-	width : 100%;
-	height: 70%;
-	display: table;
-	margin-bottom: 30px;
-	width: 100%;
+   width: 100%;
+   height: 70%;
+   display: table;
+   margin-bottom: 30px;
+   width: 100%;
 }
-.contents-wrapper{
-    padding: 5%;
+
+.contents-wrapper {
+   padding: 5%;
 }
 
 .cover-container {
-	display: table-cell;
-	vertical-align: middle;
+   display: table-cell;
+   vertical-align: middle;
+   height: 100%;
+   width: 100%;
 }
-.btn-group-lg>.btn, .btn-lg{
-    border-radius: 2.3rem;
+
+.btn-group-lg>.btn, .btn-lg {
+   border-radius: 2.3rem;
 }
-.card-container{
-    min-width: 340px;
-    max-width : 340px;
-    min-height: 189px;
-    max-height : 189px;   
+
+.card-container {
+   min-width: 340px;
+   max-width: 340px;
+   min-height: 189px;
+   max-height: 189px;
 }
 /* .card-flipper{
     width: 100%;
     height: 100%;
 } */
-
-.card-settings{
-    height: 100%;
-}
-.cardlist-wrapper{
-    height : 90%;
-    padding-top : 20%;
-    padding-bottom : 20%;
-}
-.col-md-4{
-padding: 0;
-min-width:340px;
-min-height:189px;
+.card-settings {
+   height: 100%;
 }
 
- #cardfront02 {
-        background-image: url(/src/main/webapp/html/image/card002-back.png);
-        background-repeat: none;
-        background-size: contain;
-        min-width: 340px;
-        max-width: 340px;
-        min-height: 189px;
-        max-height: 189px;
-    }
+.cardlist-wrapper {
+   height: 90%;
+   padding-top: 20%;
+   padding-bottom: 20%;
+}
 
-    #cardback02 {
-        background-image: url(/src/main/webapp/html/image/card002.png);
-        background-repeat: none;
-        background-size: contain;
-        min-width: 340px;
-        max-width: 340px;
-        min-height: 189px;
-        max-height: 189px;
-    }
+.col-md-4 {
+   padding: 0;
+   min-width: 340px;
+   min-height: 189px;
+}
 
-    #cardfront02,
-    #card-back02 {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        backface-visibility: hidden;
-        background-size: contain;
-    }
+#cardfront01 {
+   background-image: url('../../../resources/img/card.jpg');
+   background-repeat: none;
+   background-size: contain;
+   min-width: 340px;
+   max-width: 340px;
+   min-height: 189px;
+   max-height: 189px;
+}
 
-    #cardfront03 {
-        background-image: url(/src/main/webapp/html/image/unnamed.jpg);
-        background-repeat: none;
-        background-size: 100%;
+#cardback01 {
+   background-image: url('../../../resources/img/card.jpg');
+   background-repeat: none;
+   background-size: contain;
+   min-width: 340px;
+   max-width: 340px;
+   min-height: 189px;
+   max-height: 189px;
+}
 
-    }
+#cardfront01, #card-back01 {
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   backface-visibility: hidden;
+   background-size: contain;
+}
 
-    #cardback03 {
-        background-image: url(/src/main/webapp/html/image/unnamed-1.jpg);
-        background-repeat: none;
-        background-size: 100%;
-    }
+#cardfront02 {
+   background-image: url('../../../resources/img/card03.jpg');
+   background-repeat: none;
+   background-size: contain;
+   min-width: 340px;
+   max-width: 340px;
+   min-height: 189px;
+   max-height: 189px;
+}
 
-    #cardfront03,
-    #card-back03 {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        backface-visibility: hidden;
-        background-size: contain;
-    }
+#cardback02 {
+   background-image: url('../../../resources/img/card03-back.jpg');
+   background-repeat: none;
+   background-size: contain;
+   min-width: 340px;
+   max-width: 340px;
+   min-height: 189px;
+   max-height: 189px;
+}
+
+#cardfront02, #card-back02 {
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   backface-visibility: hidden;
+   background-size: contain;
+}
+
+#cardfront03 {
+   background-image: url('../../../resources/img/card02.png');
+   background-repeat: none;
+   background-size: contain;
+   min-width: 340px;
+   max-width: 340px;
+   min-height: 189px;
+   max-height: 189px;
+}
+
+#cardback03 {
+   background-image: url('../../../resources/img/card02-back.png');
+   background-repeat: none;
+   background-size: contain;
+   min-width: 340px;
+   max-width: 340px;
+   min-height: 189px;
+   max-height: 189px;
+}
+
+#cardfront03, #card-back03 {
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   backface-visibility: hidden;
+   background-size: contain;
+}
