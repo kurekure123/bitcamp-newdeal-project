@@ -1,5 +1,5 @@
 <div class="card-container">
-    <div id="card-flipper" class="card-flipper">
+    <div id="card-flipper1" class="card-flipper">
         <div id="card-front">
         <div id="cardfront01"></div>
         </div>    
@@ -8,15 +8,3 @@
         </div>
     </div>
 </div>
-
-<script>
-$('.card-flipper').click(function() {
-    if ($(this).css('transform') == 'none') {
-        $(this).css("transform", "rotateY(180deg)");
-    } else {
-        $(this).css("transform", "");
-    }
-})
-console.log(document.body.clientHeight);
-
-</script>

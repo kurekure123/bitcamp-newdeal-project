@@ -1,18 +1,30 @@
 <div class="container">
-    <div class="cardlist-wrapper">
-        <div class="row mb-3">
-            <div id="card1" class="col-md-4">
-            </div>
-            <div id="card2" class="col-md-4">
-            </div>
-            <div id="card3" class="col-md-4">
-            </div>
-        </div>
-    </div>
+	<div class="cardlist-wrapper">
+		<div class="row mb-3">
+			<div id="card1" class="col-md-4"></div>
+			<div id="card2" class="col-md-4"></div>
+			<div id="card3" class="col-md-4"></div>
+		</div>
+	</div>
 </div>
 <script>
-    $('#card1').load('make-bizcard/businesscard1.html');
-    $('#card2').load('make-bizcard/businesscard2.html');
-    $('#card3').load('make-bizcard/businesscard3.html');
+$('#card1').load('make-bizcard/businesscard1.html');
+$('#card2').load('make-bizcard/businesscard2.html');
+$('#card3').load('make-bizcard/businesscard3.html');
+
+$('.cardlist-wrapper').on('click', '.card-flipper', function(e){
+    if($(e.target).css('transform') == 'none'){
+        $(e.target).css("transform", "rotateY(180deg)");
+    }else {
+        $(e.target).css("transform", "");
+    }
+})
+    $('.cardlist-wrapper').on('click', '.card-flipper', function(e){
+        if($(e.target).css('transform') == 'none'){
+            $(e.target).css("transform", "rotateY(180deg)");
+        }else {
+            $(e.target).css("transform", "");
+        }
+    })
     
 </script>
