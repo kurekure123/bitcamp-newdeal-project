@@ -3,8 +3,8 @@ $(document).ready(function() {
             $('#sidebarCollapse').on('click', function() {
                 $('#sidebar').toggleClass('active');
             });
-            $('div#test2').load('mypage/form.html');
-            $('footer').load('mypage/footer.html');
+            $('div#test2').load('form.html');
+            $('footer').load('footer.html');
         });
         
         
@@ -20,7 +20,7 @@ $(document).ready(function() {
                     footer: '<a href>Why do I have this issue?</a>'
                   })
                 setTimeout(function () {
-                     location.replace( './login/main.html');
+                     location.replace( '../login/main.html');
                  }, 3000)
                 
             }
@@ -31,7 +31,7 @@ $(document).ready(function() {
         $('#logout').on('click',() => {
         $.post(`${serverApiAddr}/json/member/logout`,function(result) {
                if(result === 'success'){
-                   location.href = './login/main.html'
+                   location.href = '../login/main.html'
                }
              }, 'json')
         });
