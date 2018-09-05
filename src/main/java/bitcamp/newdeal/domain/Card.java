@@ -9,11 +9,11 @@ public class Card {
     protected String fBook;
     protected String insta;
     protected String cName;
+    protected String cAdd;
     protected String cPhon;
     protected String job;
     protected String fax;
     protected String web;
-    protected String pic;
     
     
     public int getBno() {
@@ -58,6 +58,12 @@ public class Card {
     public void setcName(String cName) {
         this.cName = cName;
     }
+    public String getcAdd() {
+        return cAdd;
+    }
+    public void setcAdd(String cAdd) {
+        this.cAdd = cAdd;
+    }
     public String getcPhon() {
         return cPhon;
     }
@@ -82,20 +88,13 @@ public class Card {
     public void setWeb(String web) {
         this.web = web;
     }
-    public String getPic() {
-        return pic;
-    }
-    public void setPic(String pic) {
-        this.pic = pic;
-    }
     
     @Override
     public String toString() {
         return "Card [bno=" + bno + ", bName=" + bName + ", bEmail=" + bEmail + ", bPhon=" + bPhon + ", fBook=" + fBook
-                + ", insta=" + insta + ", cName=" + cName + ", cPhon=" + cPhon + ", job=" + job + ", fax=" + fax
-                + ", web=" + web + ", pic=" + pic + "]";
+                + ", insta=" + insta + ", cName=" + cName + ", cAdd=" + cAdd + ", cPhon=" + cPhon + ", job=" + job
+                + ", fax=" + fax + ", web=" + web + "]";
     }
-
-    
+      
 }
 
