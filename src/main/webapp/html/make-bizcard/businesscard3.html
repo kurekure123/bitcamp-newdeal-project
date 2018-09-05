@@ -1,12 +1,44 @@
-<div class="card-container">
-    <div id="card-flipper3" class="card-flipper">
-        <div id="card-front">
-            <div id="cardfront03"></div>
-        </div>
-        <div id="card-back">
-            <div id="cardback03"></div>
-        </div>
-    </div>
-    <button type="button" id="prev3"><i class="fa fa-search-plus" aria-hidden="true"></i></button>
-</div>
+<div id="total-div">
+	<input type="checkbox" id="check03" name="feature" />
+	<div class="card-container">
+		<div id="card-flipper" class="card-flipper">
+			<div id="card-front">
+				<div id="cardfront03"></div>
+			</div>
+			<div id="card-back">
+				<div id="cardback03"></div>
+			</div>
+		</div>
+		<div id="mdcont container">
+			<button type="button" id="prev3" class="fa fa-search-plus"
+				aria-hidden="true" data-toggle="modal" data-target="#cardModal03">
+			</button>
+			<div id="cardModal03" class="modal fade " tabindex="-1"
+				role="dialog modal-lg">
+				<div class="modal-dialog modal-lg" role="dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title">BIZCARD-EXAMPLE</h5>
+						</div>
+						<div class="modal-body">
+							<div class="modal-container">
+								<div id="card-flipper" class="card-flipper">
+									<div id="card-front">
+										<div id="modalcardfr03"></div>
+									</div>
+									<div id="card-back">
+										<div id="modalcardbc03"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="modal-footer">
+					<button type="button" class="btn btn-outline-danger" data-dismiss="modal">Close</button>
+						</div>
 
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -14,8 +14,7 @@ public class Card {
     protected String job;
     protected String fax;
     protected String web;
-    
-    
+
     public int getBno() {
         return bno;
     }
@@ -88,13 +87,11 @@ public class Card {
     public void setWeb(String web) {
         this.web = web;
     }
-    
     @Override
     public String toString() {
         return "Card [bno=" + bno + ", bName=" + bName + ", bEmail=" + bEmail + ", bPhon=" + bPhon + ", fBook=" + fBook
-                + ", insta=" + insta + ", cName=" + cName + ", cAdd=" + cAdd + ", cPhon=" + cPhon + ", job=" + job
-                + ", fax=" + fax + ", web=" + web + "]";
+                + ", insta=" + insta + ", cName=" + cName + ", cPhon=" + cPhon + ", job=" + job + ", fax=" + fax
+                + ", web=" + web + "]";
     }
-      
 }
 

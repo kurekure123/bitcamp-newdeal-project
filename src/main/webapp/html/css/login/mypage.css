@@ -1,5 +1,4 @@
 .dropdown-size {
-<<<<<<< HEAD
 	text-align: right;
 }
 
@@ -63,9 +62,7 @@ footer>div.container {
 
 .d-flex {
 	margin-top: 7.4%;
-	}
-
-
+}
 
 footer #project_ex, #pro_team {
 	margin: 0px auto;
@@ -125,23 +122,24 @@ a[data-toggle="collapse"] {
 @import
 	"https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 
-#select-card, #final-btn, #info-btn {
+#next-btn, #final-btn, #info-btn {
 	font-family: 'Kosugi Maru', sans-serif;
 	background-color: rgba(255, 106, 134, 0.73);
 	border: 0px;
 	color: #424242;
 	outline: none;
 }
-#prev1, #prev2, #prev3{
-	border:0px;
-	background-color: 	rgba(255, 255, 255, 0);
-} 
 
+#prev1, #prev2, #prev3 {
+	border: 0px;
+	background-color: rgba(255, 255, 255, 0);
+	margin: 10px;
+}
 
 #b-btn {
 	margin-top: 6.5%;
 	float: right;
-	margin-right: 10%;
+	margin-right: 12.5%;
 }
 
 body {
@@ -173,9 +171,10 @@ a, a:hover, a:focus {
 #sidebar .sidebar-header {
 	padding: 60% 5% 10% 20%;
 	font-size: 40px;
-	border-bottom: 0px ;
+	border-bottom: 0px;
 	text-decoration: underline;
 }
+
 #sidebar ul.components {
 	padding: 20px 0;
 }
@@ -229,7 +228,7 @@ ul ul a {
 }
 
 .nav-container {
-	width: 100%;
+	
 }
 
 #content {
@@ -240,7 +239,6 @@ ul ul a {
 	width: 100%;
 	height: 70%;
 	display: table;
-
 	width: 100%;
 }
 
@@ -272,36 +270,43 @@ ul ul a {
 .card-settings {
 	height: 100%;
 }
-cardlist .container{
+
+cardlist .container {
 	width: 1200px;
-	
 }
+
 .cardlist-wrapper {
 	height: 90%;
-	padding-top: 20%;
+	padding-top: 15%;
 	padding-bottom: 10%;
+}
+
+#total-div {
+	height: 100%;
 }
 
 .col-md-4 {
 	padding: 0;
 	min-width: 340px;
 	min-height: 189px;
+	margin-bottom: 40px;
 }
 
 #cardfront01 {
 	background-image: url('../../../resources/img/card.jpg');
 	background-repeat: none;
-	background-size: contain;
+	background-size: 100%;
 	min-width: 340px;
 	max-width: 340px;
 	min-height: 189px;
 	max-height: 189px;
+	min-width: 340px;
 }
 
 #cardback01 {
-	background-image: url('../../../resources/img/card.jpg');
+	background-image: url('../../../resources/img/card-back.jpg');
 	background-repeat: none;
-	background-size: contain;
+	background-size: 100%;
 	min-width: 340px;
 	max-width: 340px;
 	min-height: 189px;
@@ -370,361 +375,30 @@ cardlist .container{
 	position: absolute;
 	backface-visibility: hidden;
 	background-size: contain;
-=======
-   text-align: right;
 }
 
-.dropdown-menu {
-   border: 0px;
-   font-family: 'Gaegu', cursive;
-   font-size: 18px;
-   background-color: #dae0e5;
+/* businesscard1-3 */
+#cardModal01, #cardModal02, #cardModal03 {
+	margin-top: 10%;
 }
 
-.dropdown-menu div:hover {
-   background-color: rgba(135, 153, 250, 0.78)
+.modal-container {
+	width: 680px;
+	height: 378px;
+	margin: 0 auto;
 }
 
-.bizcard-info-size {
-   width: 65%;
-   margin-top: 20px;
+#modalcardfr03, #modalcardbc03 {
+	width: 680px;
+	height: 378px;
 }
 
-.form-group input {
-   border: 0px;
-   border-radius: 0px;
-   border-bottom: 2px solid;
-   background-color: rgba(0, 0, 0, 0);
-   border-bottom: 2px solid;
-   margin-top: 20px;
-   height: 50px;
-   font-size: 20px;
-   outline: none;
+#modalcardfr02, #modalcardbc02 {
+	width: 680px;
+	height: 378px;
 }
 
-input[class="form-control"] {
-   outline: none;
-}
-
-.form-group label {
-   font-family: 'Gaegu', cursive;
-   font-size: 20px;
-}
-
-.index-border {
-   margin-top: 10px;
-   border-right: 1px solid #eee;
-   min-height: 600px;
-}
-
-.dropdown-toggle {
-   font-family: 'Gaegu', cursive;
-   font-size: 25px;
-}
-
-footer {
-   background-color: rgba(206, 206, 206, 0.74);
-   margin: 0px auto;
-}
-
-footer>div.container {
-   height: 200px;
-}
-
-.d-flex {
-   margin-top: 30px;
-}
-
-footer #project_ex, #pro_team {
-   margin: 0px auto;
-   width: 50%;
-   text-align: center;
-   padding-top: 20px;
-   font-size: 14px;
-}
-
-footer a {
-   padding-right: 15px;
-   font-weight: bold;
-   font-family: 'Acme', sans-serif;
-}
-
-.dropdown {
-   text-align: right;
-}
-
-.wrapper {
-   display: flex;
-   align-items: stretch;
-}
-
-#sidebar.active {
-   margin-left: -250px;
-}
-
-#sidebar {
-   font-family: 'Anton', sans-serif;
-   min-width: 250px;
-   max-width: 250px;
-   min-height: 80vh;
-}
-
-a[data-toggle="collapse"] {
-   position: relative;
-}
-
-.btn  .dropdown-toggle::after {
-   display: block;
-   position: absolute;
-   top: 50%;
-   right: 20px;
-   transform: translateY(-50%);
-}
-
-@media ( max-width : 768px) {
-   #sidebar {
-      margin-left: -250px;
-   }
-   #sidebar.active {
-      margin-left: 0;
-   }
-}
-
-@import
-   "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
-
-#select-card, #final-btn, #info-btn {
-   font-family: 'Kosugi Maru', sans-serif;
-   background-color: rgba(255, 173, 173, 0.53);
-   border: 0px;
-   color: #424242;
-   outline: none;
-}
-
-#b-btn {
-   margin-top: 30px;
-   float: right;
-}
-
-body {
-   font-family: 'Poppins', sans-serif;
-   background: #fafafa;
-}
-
-p {
-   font-family: 'Poppins', sans-serif;
-   font-size: 1.1em;
-   font-weight: 300;
-   line-height: 1.7em;
-   color: #999;
-}
-
-a, a:hover, a:focus {
-   color: inherit;
-   text-decoration: none;
-   transition: all 0.3s;
-}
-
-#sidebar {
-   /* don't forget to add all the previously mentioned styles here too */
-   background-color: rgba(163, 167, 255, 0.89);
-   color: rgb(0, 0, 0);
-   transition: all 0.3s;
-}
-
-#sidebar .sidebar-header {
-   padding: 20px 20px 11px 20px;
-   font-size: 30px;
-   border-bottom: 2px solid rgb(134, 134, 134);
-}
-
-#sidebar ul.components {
-   padding: 20px 0;
-}
-#sidebar a{
-      font-size: 1.1em;
-}
-
-#sidebar ul p {
-   color: #fff;
-   padding: 10px;
-}
-
-#sidebar ul li a {
-   padding: 10px;
-   font-size: 1.5em;
-   display: block;
-}
-
-#sidebar ul li a:hover {
-   color: #7386D5;
-   background: #fff;
-}
-
-#sidebar ul li.active>a, a[aria-expanded="true"] {
-   color: #fff;
-   background: #6d7fcc;
-}
-
-ul ul a {
-   font-size: 0.9em !important;
-   padding-left: 30px !important;
-   background: #6d7fcc;
-}
-
-#test2 {
-   height: 100%;
-}
-
-.navbar {
-   height: 8.4%;
-   background-color: rgba(206, 206, 206, 0.74);
-   font-size: 35px;
-   font-family: 'Do Hyeon', sans-serif;
-}
-
-.navbar button {
-   font-family: 'Mukta', sans-serif;
-}
-
-.nav-container {
-   width: 100%;
-}
-
-#content {
-   width: 100%;
-}
-
-.site-wrapper-inner {
-   width: 100%;
-   height: 70%;
-   display: table;
-   margin-bottom: 30px;
-   width: 100%;
-}
-
-.contents-wrapper {
-   padding: 5%;
-}
-
-.cover-container {
-   display: table-cell;
-   vertical-align: middle;
-   height: 100%;
-   width: 100%;
-}
-
-.btn-group-lg>.btn, .btn-lg {
-   border-radius: 2.3rem;
-}
-
-.card-container {
-   min-width: 340px;
-   max-width: 340px;
-   min-height: 189px;
-   max-height: 189px;
-}
-/* .card-flipper{
-    width: 100%;
-    height: 100%;
-} */
-.card-settings {
-   height: 100%;
-}
-
-.cardlist-wrapper {
-   height: 90%;
-   padding-top: 20%;
-   padding-bottom: 20%;
-}
-
-.col-md-4 {
-   padding: 0;
-   min-width: 340px;
-   min-height: 189px;
-}
-
-#cardfront01 {
-   background-image: url('../../../resources/img/card.jpg');
-   background-repeat: none;
-   background-size: contain;
-   min-width: 340px;
-   max-width: 340px;
-   min-height: 189px;
-   max-height: 189px;
-}
-
-#cardback01 {
-   background-image: url('../../../resources/img/card.jpg');
-   background-repeat: none;
-   background-size: contain;
-   min-width: 340px;
-   max-width: 340px;
-   min-height: 189px;
-   max-height: 189px;
-}
-
-#cardfront01, #card-back01 {
-   width: 100%;
-   height: 100%;
-   position: absolute;
-   backface-visibility: hidden;
-   background-size: contain;
-}
-
-#cardfront02 {
-   background-image: url('../../../resources/img/card03.jpg');
-   background-repeat: none;
-   background-size: contain;
-   min-width: 340px;
-   max-width: 340px;
-   min-height: 189px;
-   max-height: 189px;
-}
-
-#cardback02 {
-   background-image: url('../../../resources/img/card03-back.jpg');
-   background-repeat: none;
-   background-size: contain;
-   min-width: 340px;
-   max-width: 340px;
-   min-height: 189px;
-   max-height: 189px;
-}
-
-#cardfront02, #card-back02 {
-   width: 100%;
-   height: 100%;
-   position: absolute;
-   backface-visibility: hidden;
-   background-size: contain;
-}
-
-#cardfront03 {
-   background-image: url('../../../resources/img/card02.png');
-   background-repeat: none;
-   background-size: contain;
-   min-width: 340px;
-   max-width: 340px;
-   min-height: 189px;
-   max-height: 189px;
-}
-
-#cardback03 {
-   background-image: url('../../../resources/img/card02-back.png');
-   background-repeat: none;
-   background-size: contain;
-   min-width: 340px;
-   max-width: 340px;
-   min-height: 189px;
-   max-height: 189px;
-}
-
-#cardfront03, #card-back03 {
-   width: 100%;
-   height: 100%;
-   position: absolute;
-   backface-visibility: hidden;
-   background-size: contain;
->>>>>>> refs/remotes/origin/master
+#modalcardfr01, #modalcardbc01 {
+	width: 680px;
+	height: 378px;
 }
