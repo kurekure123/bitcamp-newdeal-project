@@ -13,9 +13,6 @@ public class Card {
     protected String job;
     protected String fax;
     protected String web;
-    protected String pic;
-    
-    
     public int getBno() {
         return bno;
     }
@@ -82,20 +79,12 @@ public class Card {
     public void setWeb(String web) {
         this.web = web;
     }
-    public String getPic() {
-        return pic;
-    }
-    public void setPic(String pic) {
-        this.pic = pic;
-    }
-    
     @Override
     public String toString() {
         return "Card [bno=" + bno + ", bName=" + bName + ", bEmail=" + bEmail + ", bPhon=" + bPhon + ", fBook=" + fBook
                 + ", insta=" + insta + ", cName=" + cName + ", cPhon=" + cPhon + ", job=" + job + ", fax=" + fax
-                + ", web=" + web + ", pic=" + pic + "]";
+                + ", web=" + web + "]";
     }
-
-    
+   
 }
 

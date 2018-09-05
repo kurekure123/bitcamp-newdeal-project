@@ -13,13 +13,16 @@
     </div>
 
       <div class="d-flex">
-            <button id="info-btn" class="btn btn-primary btn-lg mr-auto prev-btn" > < PREV</button>
-            <button id="final-btn" class="btn btn-primary btn-lg next-btn">NEXT ></button>
+            <button id="info-btn" class="btn btn-primary btn-lg mr-auto prev-btn" ></button>
+            <button id="final-btn" class="btn btn-primary btn-lg next-btn"></button>
         </div>
 </div>
 </div>
 </div>
 <script>
+    $('#info-btn').text(' < PREV');
+    $('#final-btn').text('NEXT >');
+    
     $('#card1').load('../make-bizcard/businesscard1.html');
     $('#card2').load('../make-bizcard/businesscard2.html');
     $('#card3').load('../make-bizcard/businesscard3.html');
@@ -31,8 +34,7 @@
             $(e.target).css("transform", "");
         }
     })
-    $('#info-btn').on('click', () =>{
-    	$('div#test2').load('./form.html')
-    	
-    })
+    
+    
+    
 </script>

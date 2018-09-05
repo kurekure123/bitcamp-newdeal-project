@@ -6,10 +6,13 @@
 					data-toggle="dropdown">항목 추가</button>
 				<div id="add-info" class="dropdown-menu btn-light">
 					<div id="1" class="dropdown-item">Facebook</div>
-					<div id="2" class="dropdown-item" href="#">Instagram</div>
-					<div id="3" class="dropdown-item" href="#">Company name</div>
-					<div id="4" class="dropdown-item" href="#">Fax</div>
-					<div id="5" class="dropdown-item" href="#">Web Site</div>
+					<div id="2" class="dropdown-item">Instagram</div>
+					<div id="3" class="dropdown-item">Company name</div>
+					<div id="4" class="dropdown-item">Company address</div>
+					<div id="5" class="dropdown-item">Company phone</div>
+					<div id="6" class="dropdown-item">Position</div>
+					<div id="7" class="dropdown-item">Fax</div>
+					<div id="8" class="dropdown-item">Web Site</div>
 				</div>
 			</div>
 		</div>
@@ -35,7 +38,7 @@
 	</div>
 </div>
 
-
+<script src="../make-bizcard/bizcardInfo.js"></script>
 <script>
  $('#next-btn').text(' NEXT >');
 
@@ -43,6 +46,7 @@ $('#add-info').on('click', (e)=>{
             var click_id = e.target.getAttribute('id');
             var text = $(`#${click_id}`).text();
             var form_id = text.replace(' ', '');
+            var serverApiAddr = "http://localhost:8080/bitcamp-newdeal-project";
             
             console.log(click_id);
             if($(`#e${form_id}`).length === 0){
@@ -57,16 +61,27 @@ $('#add-info').on('click', (e)=>{
                 alert(text + '항목을 이미 추가하셨습니다.');
             }
         });
-		var serverApiAddr = "http://localhost:8080/bitcamp-newdeal-project";
-        $('#next-btn').on('click',()=>{
-        	$.post(`${serverApiAddr}/json/html/card`,{
-				'bEmail':$('#eEmail').val(),
-				'bName':$('#eName').val(),
-				'bPhon':$('#ePhon').val()
-			}, (result) => {
-				console.log(result.uCard);
-			}, 'json')
+		
+        $('#next-btn').on('click', ()=>{
+        	alert('what the fxxx?')
+        	var json = {
+				bEmail :$('#eEmail').val(),
+				bName :$('#eName').val(),
+				bPhon:$('#ePhon').val(),
+				bno:$('#ebno').val(),
+				cName:$('#eCompanyname').val(),
+                cPhone:$('#eCompanyphone').val(),
+                fBook:$('#eFacebook').val(),
+                fax:$('#eFax').val(),
+                insta:$('#eInstagram').val(),
+                job:$('#ePosition').val(),
+                web:$('#eWebSite').val()
+			}
         	
+        	info(json);
             $('div#test2').load('../make-bizcard/cardlist.html');
         });
+        
+        
+        
  </script>
