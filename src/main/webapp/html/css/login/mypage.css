@@ -208,7 +208,7 @@ min-height:189px;
 }
 
  #cardfront02 {
-        background-image: url(/src/main/webapp/html/image/card002-back.png);
+        background-image: url('../../../resources/img/');
         background-repeat: none;
         background-size: contain;
         min-width: 340px;
