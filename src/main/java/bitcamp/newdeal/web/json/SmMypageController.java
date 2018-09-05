@@ -2,7 +2,6 @@ package bitcamp.newdeal.web.json;
 
 import java.util.HashMap;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.web.bind.annotation.PostMapping;
@@ -40,6 +39,15 @@ public class SmMypageController {
         return result;
     }
     
-    
+    @PostMapping("bizcardInfo")
+    public Object info(HttpSession session, Card cards) {
+        HashMap<String, Object> result = new HashMap<>();
+        session.setAttribute("cInfo", cards);
+        Card iCard = (Card)session.getAttribute("cInfo");
+        result.put("cInfo", iCard);
+        
+        return result;
+        
+    }
 
 }

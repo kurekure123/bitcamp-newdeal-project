@@ -37,8 +37,6 @@
 		</div>
 	</div>
 </div>
-
-<script src="../make-bizcard/bizcardInfo.js"></script>
 <script>
  $('#next-btn').text(' NEXT >');
 
@@ -63,7 +61,7 @@ $('#add-info').on('click', (e)=>{
         });
 		
         $('#next-btn').on('click', ()=>{
-        	alert('what the fxxx?')
+        	$('div#test2').load('../make-bizcard/cardlist.html');
         	var json = {
 				bEmail :$('#eEmail').val(),
 				bName :$('#eName').val(),
@@ -77,11 +75,18 @@ $('#add-info').on('click', (e)=>{
                 job:$('#ePosition').val(),
                 web:$('#eWebSite').val()
 			}
-        	
-        	info(json);
-            $('div#test2').load('../make-bizcard/cardlist.html');
+            console.log(json);
+            
         });
         
-        
+     /*    $(function(json){
+        	$.ajax({
+        	url : "/json/CardInfoController.java",
+        	dataType :"json",
+        	success
+        	})
+        	
+        })
+         */
         
  </script>
