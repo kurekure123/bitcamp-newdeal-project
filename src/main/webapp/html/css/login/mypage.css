@@ -304,7 +304,7 @@ cardlist .container {
 }
 
 #cardback01 {
-	background-image: url('../../../resources/img/card-back.jpg');
+	background-image: url('../../../resources/img/card.jpg');
 	background-repeat: none;
 	background-size: 100%;
 	min-width: 340px;
@@ -388,35 +388,78 @@ cardlist .container {
 	margin: 0 auto;
 }
 
+#bizTotal {
+	border: 1px solid black;
+	width: 680px;
+	height: 378px;
+	background-size: contain;
+	position: absolute;
+}
+
+#bizTotal p {
+	font-size: 15px;
+}
+
 #modalcardfr03, #modalcardbc03 {
 	width: 680px;
 	height: 378px;
+	background-size: contain;
+	position: absolute;
+}
+
+#modalcardfr03 {
+	background-image: url('../../../resources/img/card.jpg');
+	background-repeat: none;
+	background-size: 100%;
+	width: 680px;
+	height: 378px;
+	background-size: contain;
+}
+
+#modalcardbc03 {
+	background-image: url('../../../resources/img/card.jpg');
+	background-repeat: none;
+	background-size: 100%;
+	width: 680px;
+	height: 378px;
+	background-size: contain;
 }
 
 #modalcardfr02, #modalcardbc02 {
 	width: 680px;
 	height: 378px;
+	background-size: contain;
+	position: absolute;
+}
+
+#modalcardfr02 {
+	background-image: url('../../../resources/img/card03.jpg');
+	background-repeat: none;
+	background-size: contain;
+}
+
+#modalcardbc02 {
+	background-image: url('../../../resources/img/card03-back.jpg');
+	background-repeat: none;
+	background-size: contain;
 }
 
 #modalcardfr01, #modalcardbc01 {
 	width: 680px;
 	height: 378px;
+	background-size: contain;
+	backface-visibility: hidden;
+	position: absolute;
 }
 
 #modalcardfr01 {
-    background-image:
-        url('https://t1.daumcdn.net/cfile/tistory/998BC94C5B909A6A0B');
-    background-repeat: none;
-    background-size: contain;
-    width: 680px;
-    height: 278px;
-}
-
-#modalcardbc03 {
-	background-image:
-		url('https://t1.daumcdn.net/cfile/tistory/998BC94C5B909A6A0B');
+	background-image: url('../../../resources/img/card03.jpg');
 	background-repeat: none;
 	background-size: contain;
-	width: 680px;
-	height: 278px;
+}
+
+#modalcardbc01 {
+	background-image: url('../../../resources/img/card03-back.jpg');
+	background-repeat: none;
+	background-size: contain;
 }
