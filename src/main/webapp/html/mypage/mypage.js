@@ -35,3 +35,8 @@ $(document).ready(function() {
                }
              }, 'json')
         });
+        
+        $('#send-mail').on('click', ()=>{
+            alert('test');
+            location.href ='../../views/contact.html';
+        });

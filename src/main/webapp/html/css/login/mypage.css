@@ -402,3 +402,21 @@ cardlist .container {
 	width: 680px;
 	height: 378px;
 }
+
+#modalcardfr01 {
+    background-image:
+        url('https://t1.daumcdn.net/cfile/tistory/998BC94C5B909A6A0B');
+    background-repeat: none;
+    background-size: contain;
+    width: 680px;
+    height: 278px;
+}
+
+#modalcardbc03 {
+	background-image:
+		url('https://t1.daumcdn.net/cfile/tistory/998BC94C5B909A6A0B');
+	background-repeat: none;
+	background-size: contain;
+	width: 680px;
+	height: 278px;
+}

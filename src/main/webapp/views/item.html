@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+#cardback03 {
+	background-image:
+		url('https://t1.daumcdn.net/cfile/tistory/998BC94C5B909A6A0B');
+	background-repeat: none;
+	background-size: contain;
+	min-width: 340px;
+	max-width: 340px;
+	min-height: 189px;
+	max-height: 189px;
+}
+</style>
+</head>
+<body>
+	<div id="card-flipper" class="card-flipper">
+		<div id="card-front">
+			<div id="cardfront03"></div>
+		</div>
+		<div id="card-back">
+			<div id="cardback03"></div>
+		</div>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+        $('.card-flipper').click(function() {
+            if ($(this).css('transform') == 'none') {
+                $(this).css("transform", "rotateY(180deg)");
+            } else {
+                $(this).css("transform", "");
+            }
+        })
+    </script>
+</body>
+</html>

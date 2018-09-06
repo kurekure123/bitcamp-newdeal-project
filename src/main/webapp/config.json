@@ -1,0 +1,9 @@
+{
+    "mailer": {
+      "service": "Gmail",
+      "host": "localhost",
+      "port": "587",
+      "user": "bizinfomailtester@gmail.com",
+      "password": "ku248659aa!@"
+    }
+  }
