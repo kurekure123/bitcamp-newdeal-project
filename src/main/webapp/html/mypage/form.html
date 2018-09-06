@@ -37,56 +37,5 @@
 		</div>
 	</div>
 </div>
-<script>
- $('#next-btn').text(' NEXT >');
-
-$('#add-info').on('click', (e)=>{
-            var click_id = e.target.getAttribute('id');
-            var text = $(`#${click_id}`).text();
-            var form_id = text.replace(' ', '');
-            var serverApiAddr = "http://localhost:8080/bitcamp-newdeal-project";
-            
-            console.log(click_id);
-            if($(`#e${form_id}`).length === 0){
-                if(click_id !== '' && click_id !== undefined){
-                    $('#info-form').append(`\
-                    <div id="e${form_id}-form" class="form-group"> \
-                      <label for="e${form_id}">${text}</label> \
-                      <input type="text" class="form-control" id="e${form_id}"> \
-                    </div>`);
-                }
-            }else {
-                alert(text + '항목을 이미 추가하셨습니다.');
-            }
-        });
-		
-        $('#next-btn').on('click', ()=>{
-        	$('div#test2').load('../make-bizcard/cardlist.html');
-        	var json = {
-				bEmail :$('#eEmail').val(),
-				bName :$('#eName').val(),
-				bPhon:$('#ePhon').val(),
-				bno:$('#ebno').val(),
-				cName:$('#eCompanyname').val(),
-                cPhone:$('#eCompanyphone').val(),
-                fBook:$('#eFacebook').val(),
-                fax:$('#eFax').val(),
-                insta:$('#eInstagram').val(),
-                job:$('#ePosition').val(),
-                web:$('#eWebSite').val()
-			}
-            console.log(json);
-            
-        });
-        
-     /*    $(function(json){
-        	$.ajax({
-        	url : "/json/CardInfoController.java",
-        	dataType :"json",
-        	success
-        	})
-        	
-        })
-         */
-        
- </script>
+ 
+ <script src="form.js"></script>
