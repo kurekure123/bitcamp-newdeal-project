@@ -28,6 +28,8 @@ public class MemberServiceImpl implements MemberService{
         params.put("password", password);
         return memberRepository.login(params);
     }
+
+
     
 
 }

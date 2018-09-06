@@ -36,7 +36,6 @@ $(document).ready(function() {
              }, 'json')
         });
         
-        $('#send-mail').on('click', ()=>{
-            alert('test');
-            location.href ='../../views/contact.html';
-        });
+        $('#myCard').on('click', ()=>{
+        	$('div#test2').load('list.html');
+        })

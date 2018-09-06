@@ -21,5 +21,6 @@
         from MEMBER
         where EMAIL=#{email} AND PWD=password(#{password})
     </select>
+
   
   </mapper> 

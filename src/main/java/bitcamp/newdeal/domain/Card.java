@@ -1,8 +1,13 @@
 package bitcamp.newdeal.domain;
 
-public class Card {
+import java.io.Serializable;
+
+public class Card implements Serializable{
+    private static final long serialVersionUID = 1L;
     
     protected int bno;
+    protected int memNo;
+    protected String cardName;
     protected String bName;
     protected String bEmail;
     protected String bPhon;
@@ -14,12 +19,24 @@ public class Card {
     protected String job;
     protected String fax;
     protected String web;
-
+    
     public int getBno() {
         return bno;
     }
     public void setBno(int bno) {
         this.bno = bno;
+    }
+    public int getMemNo() {
+        return memNo;
+    }
+    public void setMemNo(int memNo) {
+        this.memNo = memNo;
+    }
+    public String getCardName() {
+        return cardName;
+    }
+    public void setCardName(String cardName) {
+        this.cardName = cardName;
     }
     public String getbName() {
         return bName;
@@ -89,9 +106,10 @@ public class Card {
     }
     @Override
     public String toString() {
-        return "Card [bno=" + bno + ", bName=" + bName + ", bEmail=" + bEmail + ", bPhon=" + bPhon + ", fBook=" + fBook
-                + ", insta=" + insta + ", cName=" + cName + ", cPhon=" + cPhon + ", job=" + job + ", fax=" + fax
-                + ", web=" + web + "]";
+        return "Card [bno=" + bno + ", memNo=" + memNo + ", cardName=" + cardName + ", bName=" + bName + ", bEmail="
+                + bEmail + ", bPhon=" + bPhon + ", fBook=" + fBook + ", insta=" + insta + ", cName=" + cName + ", cAdd="
+                + cAdd + ", cPhon=" + cPhon + ", job=" + job + ", fax=" + fax + ", web=" + web + "]";
     }
+    
 }
 

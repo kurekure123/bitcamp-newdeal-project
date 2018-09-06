@@ -1,11 +1,15 @@
  $('#next-btn').text(' NEXT >');
- 
+ var click_id ="";
 
  $('#add-info').on('click', (e)=>{
-            var click_id = e.target.getAttribute('id');
+	 		click_id = e.target.getAttribute('id');
             var text = $(`#${click_id}`).text();
             var form_id = text.replace(' ', '');
             var serverApiAddr = "http://localhost:8080/bitcamp-newdeal-project";
+            if($('.form-group').length == 4){
+            	alert('현재 버전에서 추가 가능한 항목은 최대 4가지입니다');
+            	return;
+            }
             
             if($(`#e${form_id}`).length === 0){
                 if(click_id !== '' && click_id !== undefined){
@@ -21,10 +25,20 @@
         });
         
         $('#next-btn').on('click', ()=>{
+        	var email = $('#eEmail').val();
+        	var name = $('#eName').val();
+        	var phone = $('#ePhone').val();
+        	if( email == '' || name == '' || phone==''){
+        		alert('이메일, 이름, 연락처는 반드시 입력하셔야 합니다');
+        		return;
+        	}
+        	
+        	
+        	
             var json = {
-                bEmail :$('#eEmail').val(),
-                bName :$('#eName').val(),
-                bPhone:$('#ePhone').val(),
+                bEmail : email,
+                bName : name,
+                bPhone: phone,
                 bno:$('#ebno').val(),
                 cName:$('#eCompanyname').val(),
                 cPhone:$('#eCompanyphone').val(),
@@ -46,39 +60,59 @@
             $('#card2').append(businesscard2());
             $('#card3').append(businesscard3());
       
-            $('div #test2').html(cardlist());
-            $('#card1').append(businesscard1());
-            $('#modalcardfr01').append(frontUI1(json));
-            $('#card2').append(businesscard2());
-            $('#modalcardfr02').append(frontUI2(json));
-            $('#card3').append(businesscard3());
-            $('#modalcardfr03').append(frontUI3(json));
-        }
-
             $('#info-btn').text('< PREV');
-       	$('#final-btn').text(' SUBMIT >');
+            $('#final-btn').text(' SUBMIT >');
             
-  
-/*
- * $('#modalcardfr01').on('click', ()=>{ });
- */
+            $('#info-btn').on('click', ()=>{
+            	$('div#test2').load('form.html');
+            });
+            
+            $('input[type="radio"][name="check"]').on('click', (e)=>{
+            	click_id = e.target.getAttribute('id');
+            	console.log(click_id);
+            });
+            
             $('#prev1').on('click', ()=>{
             	$('#modalcardfr01').append(frontUI1(json));
             });
             
-           /*
-			 * $('#modalcardfr02').on('click', ()=>{ });
-			 */
             $('#prev2').on('click', ()=>{
             	$('#modalcardfr02').append(frontUI2(json));
             });
             
-            /*
-			 * $('#modalcardfr03').on('click', ()=>{ });
-			 */
             $('#prev3').on('click', ()=>{
             	$('#modalcardfr03').append(frontUI3(json));
-      });
+            });
+            
+            $('#final-btn').on('click',()=>{
+            	console.log(click_id);
+        		$.post(`${serverApiAddr}/json/html/addCard`,{
+        			'cardName': click_id,
+        			'bName': json.bName,
+        			'bEmail': json.bEmail,
+        			'bPhon': json.bPhone,
+        			'fBook': json.fBook,
+        			'insta': json.insta,
+        			'cName': json.cName,
+        			'cAdd': json.cAdd,
+        			'cPhon': json.cPhone,
+        			'job': json.job,
+        			'fax': json.fax,
+        			'web': json.web
+        		}, (result) =>{
+        			if (result.status === 'success'){
+                        location.href = 'mypage.html'
+                    }else {
+                            swal({
+                                type: 'error',
+                                title: '카드정보 실패!'
+                              })
+                    }
+                }, 'json')
+        	});
+        }
+  
+
             
             
 
@@ -112,10 +146,14 @@
                      <div id="card-front">\
                         <div id="cardfront01"></div>\
                   </div>\
-                  <div id="mdcont container">\
+                  <div id="mdcont-container">\
                      <button type="button" id="prev1" class="fa fa-search-plus"\
                         aria-hidden="true" data-toggle="modal" data-target="#cardModal01">\
                      </button>\
+                       <div class="form-check">\
+					    <input type="radio" name="check" id="businesscard1">\
+					    <label class="form-check-label" for="businesscard1">businesscard1</label>\
+					  </div>\
                      <div id="cardModal01" class="modal fade " tabindex="-1"\
                         role="dialog modal-lg">\
                         <div class="modal-dialog modal-lg" role="dialog">\
@@ -151,6 +189,10 @@
                      <button type="button" id="prev2" class="fa fa-search-plus"\
                         aria-hidden="true" data-toggle="modal" data-target="#cardModal03">\
                      </button>\
+                     <div class="form-check">\
+					    <input type="radio" name="check" id="businesscard2">\
+					    <label class="form-check-label" for="businesscard2">businesscard2</label>\
+					  </div>\
                      <div id="cardModal02" class="modal fade " tabindex="-1"\
                         role="dialog modal-lg">\
                         <div class="modal-dialog modal-lg" role="dialog">\
@@ -187,6 +229,10 @@
                      <button type="button" id="prev3" class="fa fa-search-plus"\
                         aria-hidden="true" data-toggle="modal" data-target="#cardModal03">\
                      </button>\
+                     <div class="form-check">\
+					    <input type="radio" name="check" id="businesscard3">\
+					    <label class="form-check-label" for="businesscard3">businesscard3</label>\
+					  </div>\
                      <div id="cardModal03" class="modal fade " tabindex="-1"\
                         role="dialog modal-lg">\
                         <div class="modal-dialog modal-lg" role="dialog">\
@@ -224,7 +270,7 @@
         	if(x.fax != undefined || x.fBook != null){
         		front += `<p>${x.fBook}</p>`
         	}
-            if(x.insta != undefined || x.fBook != null){
+            if(x.insta != undefined || x.insta != null){
             	front += `<p>${x.insta}</p>`
         	}
             if(x.job != undefined || x.fBook != null){

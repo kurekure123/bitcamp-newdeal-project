@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="bitcamp.newdeal.repository.CardRepository">
+  
+  <resultMap type="card" id="cardMap">
+  <id column="BIZNO" property="bno"/>
+  <result column="MNO" property="memNo"/>
+  <result column="CNAME" property="cardName"/>
+  <result column="BNAME" property="bName"/>
+  <result column="BEMAIL" property="bEmail"/>
+  <result column="PNUM" property="bPhon"/>
+  <result column="FBOOK" property="fBook"/>
+  <result column="INSTA" property="insta"/>
+  <result column="BCNAME" property="cName"/>
+  <result column="BADD" property="cAdd"/>
+  <result column="BPHON" property="cPhon"/>
+  <result column="BJOB" property="job"/>
+  <result column="BFAX" property="fax"/>
+  <result column="BWEB" property="web"/>
+  
+  </resultMap>
+  
+  <insert id="insert" parameterType="card">
+        insert into BIZ_CARDINFO (BIZNO,MNO,CNAME,BNAME,BEMAIL,PNUM,FBOOK,INSTA,BCNAME,BADD,BPHON,BJOB,BFAX,BWEB)
+        values(#{bno},#{memNo},#{cardName},#{bName},#{bEmail},#{bPhon},#{fBook},#{insta},#{cName},#{cAdd},#{cPhon},#{job},#{fax},#{web})
+  </insert>
+  
+  <select id="findByMemberNo" parameterType="int" resultMap="cardMap">
+    select * from BIZ_CARDINFO 
+    where BIZNO=#{value}
+  </select>
+  
+  <select id="findCardByMemberNo" parameterType="int" resultMap="cardMap">
+ 	select * from BIZ_CARDINFO 
+    where MNO=#{value}
+  </select>
+  </mapper>
+
+  

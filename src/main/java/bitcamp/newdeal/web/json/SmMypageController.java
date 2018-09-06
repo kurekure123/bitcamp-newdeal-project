@@ -1,10 +1,13 @@
 package bitcamp.newdeal.web.json;
 
 import java.util.HashMap;
+import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,15 +29,16 @@ public class SmMypageController {
         
         Member loginuser = (Member)session.getAttribute("loginUser");
         
-       
         result.put("lname", loginuser.getName());
         
         return result;
     }
     
     @PostMapping("addCard")
-    public Object add(Card card) {
+    public Object add(Card card,HttpSession session) {
         HashMap<String, Object> result = new HashMap<>();
+        Member loginuser = (Member)session.getAttribute("loginUser");
+        card.setMemNo(loginuser.getNo());
         try {
             cardService.add(card);
             result.put("status", "success");
@@ -45,27 +49,36 @@ public class SmMypageController {
         return result;
     }
     
-    @PostMapping("card")
-    public Object cards(HttpSession session, Card card) {
-        HashMap<String, Object> result = new HashMap<>();
-        
-        session.setAttribute("sCard", card);
-        Card uCard = (Card)session.getAttribute("sCard");
-        result.put("uCard", uCard);
-        
-        
-        return result;
-    }
+    @GetMapping("{no}")
+   public Object myCard(@PathVariable int no, HttpSession session) {
+    	Member loginUser = (Member) session.getAttribute("loginUser");
+		System.out.println(loginUser);
+		System.out.println(no);
+		
+		HashMap<String, Object> result = new HashMap<>();
+		
+		List<Card> selectCardInfo = cardService.myCard(no);
+		result.put("data", selectCardInfo);
+       
+       return result;
+   }
     
-    @PostMapping("bizcardInfo")
-    public Object info(HttpSession session, Card cards) {
-        HashMap<String, Object> result = new HashMap<>();
-        session.setAttribute("cInfo", cards);
-        Card iCard = (Card)session.getAttribute("cInfo");
-        result.put("cInfo", iCard);
-        
-        return result;
-        
-    }
+    @GetMapping("list")
+	public Object list(HttpSession session) {
+		Member loginUser = (Member) session.getAttribute("loginUser");
+		System.out.println(loginUser);
+		
+		List<Card> list = cardService.list(loginUser.getNo());
+		HashMap<String, Object> result = new HashMap<>();
+		
+		result.put("status", "success");
+		result.put("list", list);
+		return result;
+	}
+    
+    
+    
+    
+    
 
 }

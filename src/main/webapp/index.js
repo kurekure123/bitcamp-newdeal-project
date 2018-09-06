@@ -22,11 +22,12 @@ app.use(bodyparser.json());
 //static folder
 app.use('/public', express.static(path.join(__dirname, 'public')));
 app.use('/node_modules', express.static(path.join(__dirname, 'node_modules')));
-app.use('/contact.js', express.static(path.join(__dirname, 'contact.js')));
 
 app.get('/', (req, res)=>{
     res.render('contact');
 });
+
+app.use('/member', require('./member'))
 
 app.post('/send', (req, res)=>{
    const output = `
@@ -65,7 +66,7 @@ app.post('/send', (req, res)=>{
            <p>dsf</p>\
        </div>\
     </div>\
-    <div> 
+    <div style="float:left; width : 100%;"> 
         <p>You have a new contact request</p>
         <h3>Contact Detail</h3>
         <ul>

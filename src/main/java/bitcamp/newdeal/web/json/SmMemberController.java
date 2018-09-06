@@ -35,7 +35,6 @@ public class SmMemberController {
         return result;
     }
 
-    // 로그인 기능 구현 by 이성민
     @PostMapping("signIn")
     public Object signIn(String email, String password, HttpSession session) {
 
@@ -46,10 +45,6 @@ public class SmMemberController {
                 throw new Exception("로그인 실패!");
 
             session.setAttribute("loginUser", loginUser);
-            /*
-             * Member member = (Member) session.getAttribute("loginUser");
-             * System.out.println(member);
-             */
 
             result.put("loginUser", loginUser);
             result.put("status", "success");
@@ -68,5 +63,7 @@ public class SmMemberController {
         session.invalidate();
         return "success";
     }
+    
+
 
 }
