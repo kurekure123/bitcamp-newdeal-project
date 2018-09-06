@@ -147,13 +147,13 @@ body {
 	background: #fafafa;
 }
 
-p {
+/* p {
 	font-family: 'Poppins', sans-serif;
 	font-size: 1.1em;
 	font-weight: 300;
 	line-height: 1.7em;
 	color: #999;
-}
+} */
 
 a, a:hover, a:focus {
 	color: inherit;
@@ -293,18 +293,8 @@ cardlist .container {
 }
 
 #cardfront01 {
-	background-image: url('../../../resources/img/card.jpg');
-	background-repeat: none;
-	background-size: 100%;
-	min-width: 340px;
-	max-width: 340px;
-	min-height: 189px;
-	max-height: 189px;
-	min-width: 340px;
-}
-
-#cardback01 {
-	background-image: url('../../../resources/img/card.jpg');
+	background-image:
+		url('https://t1.daumcdn.net/cfile/tistory/99B2FE4C5B909A681A');
 	background-repeat: none;
 	background-size: 100%;
 	min-width: 340px;
@@ -312,17 +302,9 @@ cardlist .container {
 	min-height: 189px;
 	max-height: 189px;
 }
-
-#cardfront01, #card-back01 {
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	backface-visibility: hidden;
-	background-size: contain;
-}
-
 #cardfront02 {
-	background-image: url('../../../resources/img/card03.jpg');
+	background-image:
+		url('https://t1.daumcdn.net/cfile/tistory/99B74B3A5B909C0F2F');
 	background-repeat: none;
 	background-size: contain;
 	min-width: 340px;
@@ -330,27 +312,9 @@ cardlist .container {
 	min-height: 189px;
 	max-height: 189px;
 }
-
-#cardback02 {
-	background-image: url('../../../resources/img/card03-back.jpg');
-	background-repeat: none;
-	background-size: contain;
-	min-width: 340px;
-	max-width: 340px;
-	min-height: 189px;
-	max-height: 189px;
-}
-
-#cardfront02, #card-back02 {
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	backface-visibility: hidden;
-	background-size: contain;
-}
-
 #cardfront03 {
-	background-image: url('../../../resources/img/card02.png');
+	background-image:
+		url('https://t1.daumcdn.net/cfile/tistory/99B9314C5B909A691A');
 	background-repeat: none;
 	background-size: contain;
 	min-width: 340px;
@@ -359,24 +323,14 @@ cardlist .container {
 	max-height: 189px;
 }
 
-#cardback03 {
-	background-image: url('../../../resources/img/card02-back.png');
-	background-repeat: none;
-	background-size: contain;
-	min-width: 340px;
-	max-width: 340px;
-	min-height: 189px;
-	max-height: 189px;
-}
-
-#cardfront03, #card-back03 {
+/* #cardfront03 {
 	width: 100%;
 	height: 100%;
 	position: absolute;
 	backface-visibility: hidden;
 	background-size: contain;
 }
-
+ */
 /* businesscard1-3 */
 #cardModal01, #cardModal02, #cardModal03 {
 	margin-top: 10%;
@@ -388,27 +342,50 @@ cardlist .container {
 	margin: 0 auto;
 }
 
-#bizTotal {
-	border: 1px solid black;
-	width: 680px;
-	height: 378px;
-	background-size: contain;
-	position: absolute;
+#bizTotal001, #bizTotal002, #bizTotal003{
+    width: 680px;
+    height: 378px;
+    background-size: contain;
+    position: absolute;
 }
 
-#bizTotal p {
-	font-size: 15px;
+#bizTotal001 p  {
+    z-index: 100000000000;
+    text-align: center;
+    font-size: 20px;
+    color: black;
+    margin: 0 auto;
+    width: 300px;
 }
 
-#modalcardfr03, #modalcardbc03 {
-	width: 680px;
-	height: 378px;
-	background-size: contain;
-	position: absolute;
+#bizTotal001  {
+  background-image:
+        url('https://t1.daumcdn.net/cfile/tistory/99B2FE4C5B909A681A');
+    background-repeat: none;
+    background-size: 100%;
+    width: 680px;
+    height: 378px;
+    background-size: contain;
 }
 
-#modalcardfr03 {
-	background-image: url('../../../resources/img/card.jpg');
+#bizinfo001 {
+    margin-top: 20%;
+    font-family: 'Nanum Gothic Coding', monospace;
+}
+
+
+#bizTotal002 p  {
+	z-index: 100000000000;
+	text-align: center;
+	font-size: 20px;
+	color: black;
+	margin: 0 auto;
+	width: 300px;
+}
+
+#bizTotal002  {
+	background-image:
+        url('https://t1.daumcdn.net/cfile/tistory/99B74B3A5B909C0F2F');
 	background-repeat: none;
 	background-size: 100%;
 	width: 680px;
@@ -416,8 +393,23 @@ cardlist .container {
 	background-size: contain;
 }
 
-#modalcardbc03 {
-	background-image: url('../../../resources/img/card.jpg');
+#bizinfo002 {
+	margin-top: 20%;
+	font-family: 'Nanum Gothic Coding', monospace;
+}
+
+#bizTotal003 p  {
+    z-index: 100000000000;
+    text-align: center;
+    font-size: 20px;
+    color: black;
+    margin: 0 auto;
+    width: 300px;
+}
+
+#bizTotal003 {
+	background-image:
+		url('https://t1.daumcdn.net/cfile/tistory/99B9314C5B909A691A');
 	background-repeat: none;
 	background-size: 100%;
 	width: 680px;
@@ -425,41 +417,15 @@ cardlist .container {
 	background-size: contain;
 }
 
-#modalcardfr02, #modalcardbc02 {
-	width: 680px;
-	height: 378px;
-	background-size: contain;
-	position: absolute;
+#bizinfo003 {
+    margin-top: 20%;
+    font-family: 'Nanum Gothic Coding', monospace;
 }
 
-#modalcardfr02 {
-	background-image: url('../../../resources/img/card03.jpg');
-	background-repeat: none;
-	background-size: contain;
-}
 
-#modalcardbc02 {
-	background-image: url('../../../resources/img/card03-back.jpg');
-	background-repeat: none;
-	background-size: contain;
-}
 
-#modalcardfr01, #modalcardbc01 {
-	width: 680px;
-	height: 378px;
-	background-size: contain;
-	backface-visibility: hidden;
-	position: absolute;
-}
 
-#modalcardfr01 {
-	background-image: url('../../../resources/img/card03.jpg');
-	background-repeat: none;
-	background-size: contain;
-}
+        
+        
+      
 
-#modalcardbc01 {
-	background-image: url('../../../resources/img/card03-back.jpg');
-	background-repeat: none;
-	background-size: contain;
-}

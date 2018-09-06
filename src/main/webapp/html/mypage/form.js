@@ -1,12 +1,12 @@
  $('#next-btn').text(' NEXT >');
+ 
 
-$('#add-info').on('click', (e)=>{
+ $('#add-info').on('click', (e)=>{
             var click_id = e.target.getAttribute('id');
             var text = $(`#${click_id}`).text();
             var form_id = text.replace(' ', '');
             var serverApiAddr = "http://localhost:8080/bitcamp-newdeal-project";
             
-            console.log(click_id);
             if($(`#e${form_id}`).length === 0){
                 if(click_id !== '' && click_id !== undefined){
                     $('#info-form').append(`\
@@ -21,7 +21,6 @@ $('#add-info').on('click', (e)=>{
         });
         
         $('#next-btn').on('click', ()=>{
-            alert('what the fxxx?')
             var json = {
                 bEmail :$('#eEmail').val(),
                 bName :$('#eName').val(),
@@ -35,43 +34,54 @@ $('#add-info').on('click', (e)=>{
                 job:$('#ePosition').val(),
                 web:$('#eWebSite').val()
             }
+            
+            loadcard(json)
+
+        });
+        
+        function loadcard(json){
             $('div #test2').html(cardlist());
             
             $('#card1').append(businesscard1());
             $('#card2').append(businesscard2());
             $('#card3').append(businesscard3());
+      
+            $('div #test2').html(cardlist());
+            $('#card1').append(businesscard1());
+            $('#modalcardfr01').append(frontUI1(json));
+            $('#card2').append(businesscard2());
+            $('#modalcardfr02').append(frontUI2(json));
+            $('#card3').append(businesscard3());
+            $('#modalcardfr03').append(frontUI3(json));
+        }
+
+            $('#info-btn').text('< PREV');
+       	$('#final-btn').text(' SUBMIT >');
+            
+  
+/*
+ * $('#modalcardfr01').on('click', ()=>{ });
+ */
             $('#prev1').on('click', ()=>{
-            	$('#modalcardfr01').append(front1(json));
-            	$('#modalcardbc01').append(back1(json));
+            	$('#modalcardfr01').append(frontUI1(json));
             });
+            
+           /*
+			 * $('#modalcardfr02').on('click', ()=>{ });
+			 */
             $('#prev2').on('click', ()=>{
-            	$('#modalcardfr02').append(front2(json));
-            	$('#modalcardbc02').append(back2(json));
+            	$('#modalcardfr02').append(frontUI2(json));
             });
+            
+            /*
+			 * $('#modalcardfr03').on('click', ()=>{ });
+			 */
             $('#prev3').on('click', ()=>{
-            	$('#modalcardfr03').append(front3(json));
-            	$('#modalcardbc03').append(back3(json));
-            });
-                   
+            	$('#modalcardfr03').append(frontUI3(json));
+      });
             
             
-            
-     		 $('.card-flipper').click(function(){
-        		 	if($(this).css('transform') == 'none'){
-        		 		$(this).css("transform", "rotateY(180deg)");
-        		 	}else {
-        		 		$(this).css("transform", "");
-        		 	}
-        		 })
-            
-                 $('#info-btn').text('< PREV');
-            	$('#final-btn').text(' SUBMIT >');
-            $('#info-btn').on('click', ()=>{
-            	 $('div#test2').load('form.html');
-            })
-            
-        });
-        
+
         
         var cardlist =x=>{
             return `<div class="site-wrapper-inner contents-wrapper">\
@@ -84,7 +94,6 @@ $('#add-info').on('click', (e)=>{
                                 <div id="card3" class="col-md-4"></div>\
                             </div>\
                         </div>\
-            
                         <div class="d-flex">\
                             <button id="info-btn"\
                                 class="btn btn-primary btn-lg mr-auto prev-btn"></button>\
@@ -95,235 +104,15 @@ $('#add-info').on('click', (e)=>{
             </div>\
             `
         }
-        var businesscard3 = x => {
-            return `\
-            <div id="total-div">\
-               <div class="card-container">\
-                  <div id="card-flipper" class="card-flipper">\
-                     <div id="card-front">\
-                        <div id="cardfront03"></div>\
-                     </div>\
-                     <div id="card-back">\
-                        <div id="cardback03"></div>\
-                     </div>\
-                  </div>\
-                  <div id="mdcont-container">\
-                     <button type="button" id="prev3" class="fa fa-search-plus"\
-                        aria-hidden="true" data-toggle="modal" data-target="#cardModal01">\
-                     </button>\
-                     <div id="cardModal03" class="modal fade " tabindex="-1"\
-                        role="dialog modal-lg">\
-                        <div class="modal-dialog modal-lg" role="dialog">\
-                           <div class="modal-content">\
-                              <div class="modal-header">\
-                                 <h5 class="modal-title">BIZCARD-EXAMPLE</h5>\
-                              </div>\
-                              <div class="modal-body">\
-                                 <div class="modal-container">\
-                                    <div id="card-flipper" class="card-flipper">\
-                                       <div id="card-front">\
-                                          <div id="modalcardfr03"></div>\
-                                       </div>\
-                                       <div id="card-back">\
-                                          <div id="modalcardbc03"></div>\
-                                       </div>\
-                                    </div>\
-                                 </div>\
-                              </div>\
-                              <div class="modal-footer">\
-                                 <button type="button" class="btn btn-outline-danger"\
-                                    data-dismiss="modal">Close</button>\
-                              </div>\
-                           </div>\
-                        </div>\
-                     </div>\
-                  </div>\
-               </div>\
-            </div>\
-            `
-        }
-        function front1(x){ 
-            console.log(x);
-            var test = '<div id = "bizTotal" >'
-                + '<div id="bizinfo">'
-                + '<p>'+x.bEmail+'</p>'
-                + '<p>'+x.bPhone+'</p>'
-                + '<p>'+x.bName+'</p>'
-          
-        
-            	
-        	if(x.fax != undefined || x.fBook != null){
-        		test += `<p>${x.fBook}</p>`
-        	}
-            if(x.insta != undefined || x.fBook != null){
-        		test += `<p>${x.insta}</p>`
-        	}
-            if(x.job != undefined || x.fBook != null){
-        		test += `<p>${x.job}</p>`
-        	}
-            if(x.web != undefined || x.fBook != null){
-        		test += `<p>${x.web}</p>`
-        	}
-            
-            
-           test += '</div></div>'
-            
-            return test
-           
-        }
-        
-        function back1(x){ 
-            console.log(x);
-            var test = '<div id = "bizTotal" >'
-                + '<div id="bizinfo">'
-                + '<p>'+x.bEmail+'</p>'
-                + '<p>'+x.bPhone+'</p>'
-                + '<p>'+x.bName+'</p>'
-          
-        
-            	
-        	if(x.fax != undefined || x.fBook != null){
-        		test += `<p>${x.fBook}</p>`
-        	}
-            if(x.insta != undefined || x.fBook != null){
-        		test += `<p>${x.insta}</p>`
-        	}
-            if(x.job != undefined || x.fBook != null){
-        		test += `<p>${x.job}</p>`
-        	}
-            if(x.web != undefined || x.fBook != null){
-        		test += `<p>${x.web}</p>`
-        	}
-            
-            
-           test += '</div></div>'
-            
-            return test
-           
-        }
-        
-        
-        var businesscard2 = x => {
-            return ` \
-            <div id="total-div">\
-                <div class="card-container">\
-                    <div id="card-flipper" class="card-flipper">\
-                        <div id="card-front">\
-                            <div id="cardfront02"></div>\
-                        </div>\
-                        <div id="card-back">\
-                            <div id="cardback02"></div>\
-                        </div>\
-                    </div>\
-                   <div id="mdcont-container">\
-                        <button type="button" id="prev2" class="fa fa-search-plus"\
-                            aria-hidden="true" data-toggle="modal" data-target="#cardModal02">\
-                        </button>\
-                        <div id="cardModal02" class="modal fade " tabindex="-1"\
-                            role="dialog modal-lg">\
-                            <div class="modal-dialog modal-lg" role="dialog">\
-                                <div class="modal-content">\
-                                    <div class="modal-header">\
-                                        <h5 class="modal-title">BIZCARD-EXAMPLE</h5>\
-                                    </div>\
-                                    <div class="modal-body">\
-                                        <div class="modal-container">\
-                                            <div id="card-flipper" class="card-flipper">\
-                                                <div id="card-front">\
-                                                    <div id="modalcardfr02"></div>\
-                                                </div>\
-                                                <div id="card-back">\
-                                                    <div id="modalcardbc02"></div>\
-                                                </div>\
-                                            </div>\
-                                        </div>\
-                                    </div>\
-                                    <div class="modal-footer">\
-                                   <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Close</button>\
-                                    </div>\
-                                </div>\
-                            </div>\
-                        </div>\
-                    </div>\
-                </div>\
-                </div>\
-                `
-        }
-        
-        function front2(x){ 
-            console.log(x);
-            var test = '<div id = "bizTotal">'
-                + '<div id="bizinfo">'
-                + '<p>'+x.bEmail+'</p>'
-                + '<p>'+x.bPhone+'</p>'
-                + '<p>'+x.bName+'</p>'
-          
-        
-            	
-        	if(x.fax != undefined || x.fBook != null){
-        		test += `<p>${x.fBook}</p>`
-        	}
-            if(x.insta != undefined || x.fBook != null){
-        		test += `<p>${x.insta}</p>`
-        	}
-            if(x.job != undefined || x.fBook != null){
-        		test += `<p>${x.job}</p>`
-        	}
-            if(x.web != undefined || x.fBook != null){
-        		test += `<p>${x.web}</p>`
-        	}
-            
-            
-           test += '</div></div>'
-            
-            return test
-           
-        }
-        
-        function back2(x){ 
-            console.log(x);
-            var test = '<div id = "bizTotal" style="border:1px solid black; width: 420px; height: 240px;">'
-                + '<div id="bizinfo">'
-                + '<p>'+x.bEmail+'</p>'
-                + '<p>'+x.bPhone+'</p>'
-                + '<p>'+x.bName+'</p>'
-          
-        
-            	
-        	if(x.fax != undefined || x.fBook != null){
-        		test += `<p>${x.fBook}</p>`
-        	}
-            if(x.insta != undefined || x.fBook != null){
-        		test += `<p>${x.insta}</p>`
-        	}
-            if(x.job != undefined || x.fBook != null){
-        		test += `<p>${x.job}</p>`
-        	}
-            if(x.web != undefined || x.fBook != null){
-        		test += `<p>${x.web}</p>`
-        	}
-            
-            
-           test += '</div></div>'
-            
-            return test
-           
-        }
-
-        
+ 
         var businesscard1 = x => {
             return `\
             <div id="total-div">\
                <div class="card-container">\
-                  <div id="card-flipper" class="card-flipper">\
                      <div id="card-front">\
                         <div id="cardfront01"></div>\
-                     </div>\
-                     <div id="card-back">\
-                        <div id="cardback01"></div>\
-                     </div>\
                   </div>\
-                  <div id="mdcont-container">\
+                  <div id="mdcont container">\
                      <button type="button" id="prev1" class="fa fa-search-plus"\
                         aria-hidden="true" data-toggle="modal" data-target="#cardModal01">\
                      </button>\
@@ -336,14 +125,7 @@ $('#add-info').on('click', (e)=>{
                               </div>\
                               <div class="modal-body">\
                                  <div class="modal-container">\
-                                    <div id="card-flipper" class="card-flipper">\
-                                       <div id="card-front">\
                                           <div id="modalcardfr01"></div>\
-                                       </div>\
-                                       <div id="card-back">\
-                                          <div id="modalcardbc01"></div>\
-                                       </div>\
-                                    </div>\
                                  </div>\
                               </div>\
                               <div class="modal-footer">\
@@ -358,66 +140,158 @@ $('#add-info').on('click', (e)=>{
             </div>\
             `
         }
-        function front3(x){ 
-            console.log(x);
-            var test = '<div id = "bizTotal">'
-                + '<div id="bizinfo">'
-                + '<p>'+x.bEmail+'</p>'
-                + '<p>'+x.bPhone+'</p>'
-                + '<p>'+x.bName+'</p>'
-          
-        
-            	
-        	if(x.fax != undefined || x.fBook != null){
-        		test += `<p>${x.fBook}</p>`
-        	}
-            if(x.insta != undefined || x.fBook != null){
-        		test += `<p>${x.insta}</p>`
-        	}
-            if(x.job != undefined || x.fBook != null){
-        		test += `<p>${x.job}</p>`
-        	}
-            if(x.web != undefined || x.fBook != null){
-        		test += `<p>${x.web}</p>`
-        	}
-            
-            
-           test += '</div></div>'
-            
-            return test
-           
+        var businesscard2 = x => {
+            return `\
+            <div id="total-div">\
+               <div class="card-container">\
+                     <div id="card-front">\
+                        <div id="cardfront02"></div>\
+                  </div>\
+                  <div id="mdcont container">\
+                     <button type="button" id="prev2" class="fa fa-search-plus"\
+                        aria-hidden="true" data-toggle="modal" data-target="#cardModal03">\
+                     </button>\
+                     <div id="cardModal02" class="modal fade " tabindex="-1"\
+                        role="dialog modal-lg">\
+                        <div class="modal-dialog modal-lg" role="dialog">\
+                           <div class="modal-content">\
+                              <div class="modal-header">\
+                                 <h5 class="modal-title">BIZCARD-EXAMPLE</h5>\
+                              </div>\
+                              <div class="modal-body">\
+                                 <div class="modal-container">\
+                                          <div id="modalcardfr02"></div>\
+                                 </div>\
+                              </div>\
+                              <div class="modal-footer">\
+                                 <button type="button" class="btn btn-outline-danger"\
+                                    data-dismiss="modal">Close</button>\
+                              </div>\
+                           </div>\
+                        </div>\
+                     </div>\
+                  </div>\
+               </div>\
+            </div>\
+            `
         }
         
-        function back3(x){ 
-            console.log(x);
-            var test = '<div id = "bizTotal">'
-                + '<div id="bizinfo">'
+        var businesscard3 = x => {
+            return `\
+            <div id="total-div">\
+               <div class="card-container">\
+                     <div id="card-front">\
+                        <div id="cardfront03"></div>\
+                  </div>\
+                  <div id="mdcont container">\
+                     <button type="button" id="prev3" class="fa fa-search-plus"\
+                        aria-hidden="true" data-toggle="modal" data-target="#cardModal03">\
+                     </button>\
+                     <div id="cardModal03" class="modal fade " tabindex="-1"\
+                        role="dialog modal-lg">\
+                        <div class="modal-dialog modal-lg" role="dialog">\
+                           <div class="modal-content">\
+                              <div class="modal-header">\
+                                 <h5 class="modal-title">BIZCARD-EXAMPLE</h5>\
+                              </div>\
+                              <div class="modal-body">\
+                                 <div class="modal-container">\
+                                          <div id="modalcardfr03"></div>\
+                                       </div>\
+                                 </div>\
+                              </div>\
+                              <div class="modal-footer">\
+                                 <button type="button" class="btn btn-outline-danger"\
+                                    data-dismiss="modal">Close</button>\
+                              </div>\
+                           </div>\
+                        </div>\
+                     </div>\
+                  </div>\
+               </div>\
+            </div>\
+            `
+        }
+        
+        function frontUI1(x){ 
+        	console.log('test :', x);
+            var front = '<div id = "bizTotal001">'
+                + '<div id="bizinfo001">'
                 + '<p>'+x.bEmail+'</p>'
                 + '<p>'+x.bPhone+'</p>'
                 + '<p>'+x.bName+'</p>'
-          
-        
-            	
+
         	if(x.fax != undefined || x.fBook != null){
-        		test += `<p>${x.fBook}</p>`
+        		front += `<p>${x.fBook}</p>`
         	}
             if(x.insta != undefined || x.fBook != null){
-        		test += `<p>${x.insta}</p>`
+            	front += `<p>${x.insta}</p>`
         	}
             if(x.job != undefined || x.fBook != null){
-        		test += `<p>${x.job}</p>`
+            	front += `<p>${x.job}</p>`
         	}
             if(x.web != undefined || x.fBook != null){
-        		test += `<p>${x.web}</p>`
+            	front += `<p>${x.web}</p>`
+        	}
+            front += '</div></div>'
+ return front;  
+        }
+        
+      
+        function frontUI2(x){ 
+        	console.log('test :', x);
+            var front = '<div id = "bizTotal">'
+                + '<div id="bizinfo002">'
+                + '<p>'+x.bEmail+'</p>'
+                + '<p>'+x.bPhone+'</p>'
+                + '<p>'+x.bName+'</p>'
+
+        	if(x.fax != undefined || x.fBook != null){
+        		front += `<p>${x.fBook}</p>`
+        	}
+            if(x.insta != undefined || x.fBook != null){
+            	front += `<p>${x.insta}</p>`
+        	}
+            if(x.job != undefined || x.fBook != null){
+            	front += `<p>${x.job}</p>`
+        	}
+            if(x.web != undefined || x.fBook != null){
+            	front += `<p>${x.web}</p>`
         	}
             
             
-           test += '</div></div>'
+           front += '</div></div>'
             
-            return test
+            return front;
            
         }
 
+        function frontUI3(x){ 
+        	console.log('test :', x);
+            var front = '<div id = "bizTotal">'
+                + '<div id="bizinfo003">'
+                + '<p>'+x.bEmail+'</p>'
+                + '<p>'+x.bPhone+'</p>'
+                + '<p>'+x.bName+'</p>'
+
+        	if(x.fax != undefined || x.fBook != null){
+        		front += `<p>${x.fBook}</p>`
+        	}
+            if(x.insta != undefined || x.fBook != null){
+            	front += `<p>${x.insta}</p>`
+        	}
+            if(x.job != undefined || x.fBook != null){
+            	front += `<p>${x.job}</p>`
+        	}
+            if(x.web != undefined || x.fBook != null){
+            	front += `<p>${x.web}</p>`
+        	}
+            
+            
+           front += '</div></div>'
+            
+            return front;
+           
+        }
         
-        
-      
+   
