@@ -36,24 +36,25 @@ $('#add-info').on('click', (e)=>{
                 web:$('#eWebSite').val()
             }
             $('div #test2').html(cardlist());
+            
             $('#card1').append(businesscard1());
-            $('#modalcardfr01').append(front1(json));
-            $('#modalcardbc01').append(back1(json));
             $('#card2').append(businesscard2());
-            $('#modalcardfr02').append(front2(json));
-            $('#modalcardbc02').append(back2(json));
             $('#card3').append(businesscard3());
-            $('#modalcardfr03').append(front3(json));
-            $('#modalcardbc03').append(back3(json));
+            $('#prev1').on('click', ()=>{
+            	$('#modalcardfr01').append(front1(json));
+            	$('#modalcardbc01').append(back1(json));
+            });
+            $('#prev2').on('click', ()=>{
+            	$('#modalcardfr02').append(front2(json));
+            	$('#modalcardbc02').append(back2(json));
+            });
+            $('#prev3').on('click', ()=>{
+            	$('#modalcardfr03').append(front3(json));
+            	$('#modalcardbc03').append(back3(json));
+            });
+                   
             
             
-/*            $('.cardlist-wrapper').on('click', '.card-flipper', function(e) {
-                if ($(e.target).css('transform') == 'none') {
-                    $(e.target).css("transform", "rotateY(180deg)");
-                } else {
-                    $(e.target).css("transform", "");
-                }
-            })*/
             
      		 $('.card-flipper').click(function(){
         		 	if($(this).css('transform') == 'none'){
@@ -62,12 +63,12 @@ $('#add-info').on('click', (e)=>{
         		 		$(this).css("transform", "");
         		 	}
         		 })
-        		 console.log(document.body.clientHeight);
-
             
                  $('#info-btn').text('< PREV');
             	$('#final-btn').text(' SUBMIT >');
-            
+            $('#info-btn').on('click', ()=>{
+            	 $('div#test2').load('form.html');
+            })
             
         });
         
@@ -106,7 +107,7 @@ $('#add-info').on('click', (e)=>{
                         <div id="cardback03"></div>\
                      </div>\
                   </div>\
-                  <div id="mdcont container">\
+                  <div id="mdcont-container">\
                      <button type="button" id="prev3" class="fa fa-search-plus"\
                         aria-hidden="true" data-toggle="modal" data-target="#cardModal01">\
                      </button>\
@@ -214,7 +215,7 @@ $('#add-info').on('click', (e)=>{
                             <div id="cardback02"></div>\
                         </div>\
                     </div>\
-                   <div id="mdcont container">\
+                   <div id="mdcont-container">\
                         <button type="button" id="prev2" class="fa fa-search-plus"\
                             aria-hidden="true" data-toggle="modal" data-target="#cardModal02">\
                         </button>\
@@ -322,7 +323,7 @@ $('#add-info').on('click', (e)=>{
                         <div id="cardback01"></div>\
                      </div>\
                   </div>\
-                  <div id="mdcont container">\
+                  <div id="mdcont-container">\
                      <button type="button" id="prev1" class="fa fa-search-plus"\
                         aria-hidden="true" data-toggle="modal" data-target="#cardModal01">\
                      </button>\
